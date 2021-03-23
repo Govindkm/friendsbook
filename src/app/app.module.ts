@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -8,7 +8,13 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule } from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
+
+// custom directives and components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -22,6 +28,7 @@ import { PostsComponent } from './components/home/posts/posts.component';
 import { NetworkComponent } from './components/network/network.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { FriendsComponent } from './components/friends/friends.component';
+import { IconDirective } from './directives/icon.directive';
 
 const material = [
   MatCardModule,
@@ -29,6 +36,10 @@ const material = [
   MatDialogModule,
   MatDatepickerModule,
   MatNativeDateModule,
+  FlexLayoutModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule
 ]
 
 
@@ -44,7 +55,8 @@ const material = [
     PostsComponent,
     NetworkComponent,
     SettingsComponent,
-    FriendsComponent
+    FriendsComponent,
+    IconDirective
   ],
   imports: [
     BrowserModule,
@@ -54,6 +66,7 @@ const material = [
     ...material
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

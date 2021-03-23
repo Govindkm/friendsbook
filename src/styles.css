@@ -3,12 +3,12 @@
     --success-color: #42B72A;
     --body-color: #F0F2F5;
     --header-color: white;
+    --icon-color: gray;
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
 }
 html, body { 
     height: 100%; 

@@ -1,0 +1,25 @@
+mat-card{
+    margin-bottom: 1em;
+}
+
+.form-field{
+    width: 100%;
+}
+
+.camera-position {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.image-upload{
+    display: none;
+}
+
+.create-post button{
+    background-color: #19b3f0;
+    color: white;
+}
+
+mat-card-actions{
+    margin:0
+}
