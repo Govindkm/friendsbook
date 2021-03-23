@@ -8,9 +8,18 @@ import { Post } from 'src/app/models/post.model';
 })
 export class PostsComponent implements OnInit {
   posts:Post[];
+  isLoading:boolean=true;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onPost(){
+
+  }
+
+  onHidePostClick(){
+    
   }
 
 }

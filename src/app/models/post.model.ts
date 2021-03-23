@@ -7,5 +7,5 @@ export class Post{
     userName: string;
     isAdmin: boolean;
     isActive: boolean;
-    postTime: string;
+    postTimer: string;
 }

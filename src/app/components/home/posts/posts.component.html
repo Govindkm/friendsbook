@@ -1,7 +1,7 @@
 <!-- create post section -->
 <mat-card class="create-post">
     <mat-card-content>
-        <form>
+        <form (ngSubmit)="onPost()" #form="ngForm">
             <mat-form-field class="form-field">
                 <input matInput type="text" class="title" placeholder="What's on your mind?">
             </mat-form-field>
@@ -28,7 +28,53 @@
 </div>
 
 
+<!-- #### POST LOADING indicator #### -->
+<div class="progress-spinner" *ngIf="isLoading">
+    <mat-card class="spinner">
+        <div style="display: flex; justify-content: center;">
+        <mat-spinner></mat-spinner>
+        </div>
+    </mat-card>
+</div>
+
+
 <!-- user posts section -->
+
+<div *ngFor="let post of posts">
+    <mat-card class="show-posts">
+        <div fxLayout="row">
+            <span fxFlex="12%">
+                <img [src]="post.userIcon" class="user-profile-photo">
+            </span>
+            <span fxFlex="90%">
+                <div class="show-posts-header">{{ post.userName }} </div>
+                <div class="profession">{{post.profession}}</div>
+            </span>
+            <span fxFlex="5%" *ngIf="activeUserObject.isAdmin; else activeUsersPost">
+                <i class="fa fa-ban custom-icon" (click)="onHidePostClick(post)" matTooltip="Hide Post"></i>
+            </span>
+
+            <ng-template #activeUsersPost>
+                <div fxFlex="5%" *ngIf=post.isMyPost>
+                    <i class="fa fa-ban custom-icon" (click)="onHidePostClick(post)" matTooltip="Hide Post"></i>
+                </div>
+            </ng-template>
+        </div>
+        <br>
+
+        <mat-card-content>
+            <div *ngIf=post.isPostImage>
+                <img mat-card-image src="{{post.postImage}}">
+            </div>
+
+            <div *ngIf=!post.isPostImage>
+                <div class="show-posts-body">{{ post.post }}</div>
+            </div>
+            <div class="timer">{{post.postTimer}} ago</div>
+            <hr class="base-line">
+        </mat-card-content>
+    </mat-card>
+</div>
 
 
 <!-- end of posts section -->
