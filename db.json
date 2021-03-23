@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Tester1",
+      "lastname": "testing",
+      "dob": "12-01-1990",
+      "email": "test@test.com",
+      "gender": "male",
+      "password": "abc"
+    },
+    {
+      "id": 2,
+      "firstname": "Tester2",
+      "lastname": "test",
+      "dob": "12-01-1910",
+      "email": "new@new.com",
+      "gender": "male",
+      "password": "abc1"
+    },
+    {
+      "firstName": "aaaa",
+      "lastName": "aaaa",
+      "email": "aaaa",
+      "password": "aaaa",
+      "dob": "0001-11-11",
+      "gender": "male",
+      "id": 3
+    },
+    {
+      "firstName": "Ftest",
+      "lastName": "Ftest",
+      "email": "ftest@test",
+      "password": "test",
+      "dob": "0001-11-11",
+      "gender": "male",
+      "id": 4
+    }
+  ]
+}

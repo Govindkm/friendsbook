@@ -22,6 +22,10 @@ import { PostsComponent } from './components/home/posts/posts.component';
 import { NetworkComponent } from './components/network/network.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { FriendsComponent } from './components/friends/friends.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FakeBackendService } from './interceptor/fake-backend.interceptor';
+import { JwtInterceptorService } from './interceptor/jwt-interceptor.service';
+import { LogoutComponent } from './components/logout/logout.component';
 
 const material = [
   MatCardModule,
@@ -44,16 +48,24 @@ const material = [
     PostsComponent,
     NetworkComponent,
     SettingsComponent,
-    FriendsComponent
+    FriendsComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
+
+
     ...material
   ],
-  providers: [],
+  providers: [
+    
+    {provide : HTTP_INTERCEPTORS , useClass : JwtInterceptorService, multi : true},
+    {provide : HTTP_INTERCEPTORS , useClass : FakeBackendService, multi : true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

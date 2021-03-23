@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +9,14 @@ import { Observable } from 'rxjs';
 export class AuthGuardService implements CanActivate{
 
   authenticated:boolean;
-  constructor(private router:Router) {
-    this.authenticated=false;
+  constructor(private router:Router,private authService:AuthenticationService) {
+    this.authenticated=this.authService.isUserLoggedIn();
    }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    this.authenticated=this.authService.isUserLoggedIn();
+    console.log("Auth Guard")
+    console.log(this.authenticated)
+    
     if(this.authenticated){
       this.router.navigate(['/home']);
       return true;

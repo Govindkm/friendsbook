@@ -2,19 +2,26 @@
     <div class="fb-logo icon">fb</div>
 
     <!-- this contains the icon based navigation -->
-    <div class="center">
-        <div class="icon">Home</div>
-        <div class="icon">Network</div>
-        <div class="icon">Friends</div>
+    <div class="center" >
+        <div class="icon">
+            <a [routerLink] = "'/home'"> Home</a>
+        </div>
+        <div class="icon"><div class="icon">
+            <a [routerLink] = "'/network'"> Network</a>
+        </div></div>
+        <div class="icon"><div class="icon">
+            <a [routerLink] = "'/friends'"> Friends</a>
+        </div></div>
     </div>
 
 
     <!-- this contains text based navigation -->
     <div class="right">
-        <div class="icon">Settings</div>
-        <div class="icon">Logout</div>
+        <div class="icon"><div class="icon">
+            <a [routerLink] = "'/settings'"> Settings</a>
+        </div></div>
+        <div class="icon"><a [routerLink]= "'/logout'"> Logout</a></div>
     </div>
 
 </nav>
 
-<router-outlet></router-outlet>
