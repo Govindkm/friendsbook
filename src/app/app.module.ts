@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 // custom directives and components
@@ -29,6 +30,10 @@ import { NetworkComponent } from './components/network/network.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { FriendsComponent } from './components/friends/friends.component';
 import { IconDirective } from './directives/icon.directive';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptorService } from './interceptors/jwt-interceptor.service';
+import { FakeBackendService } from './interceptors/fake-backend.interceptor';
+import { LogoutComponent } from './components/logout/logout.component';
 
 const material = [
   MatCardModule,
@@ -39,7 +44,8 @@ const material = [
   FlexLayoutModule,
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatProgressSpinnerModule
 ]
 
 
@@ -56,16 +62,21 @@ const material = [
     NetworkComponent,
     SettingsComponent,
     FriendsComponent,
-    IconDirective
+    IconDirective,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     ...material
   ],
-  providers: [],
+  providers: [
+    {provide : HTTP_INTERCEPTORS , useClass : JwtInterceptorService, multi : true},
+    {provide : HTTP_INTERCEPTORS , useClass : FakeBackendService, multi : true}
+  ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
