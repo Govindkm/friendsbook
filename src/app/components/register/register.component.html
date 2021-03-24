@@ -1,0 +1,37 @@
+<section class="register">
+  <div class="header">
+    <h3 mat-dialog-title>Sign Up</h3>
+    <p>It's quick and easy</p>
+  </div>
+
+  <div class="body">
+    <form #form="ngForm">
+      <div class="user-name">
+        <input type="text" placeholder="FirstName" name="firstName" ngModel>
+        <input type="text" placeholder="LastName" name="lastName" ngModel>
+      </div>
+
+      <div class="email-password">
+        <input type="text" placeholder="Email" name="email" ngModel>
+        <input type="password" placeholder="Password" name="password" ngModel>
+      </div>
+
+      <div class="date-of-birth">
+        <label for="dob">Date of Birth</label>
+        <input style="display:inline-block" name="dob" id="dob" ngModel type="date">
+      </div>
+
+      <div class="gender">
+        <label>Gender</label>
+        <div class="radio">
+          <label class="gender">Male <input name="gender" value="male" ngModel type="radio"></label>
+          <label class="gender">Female <input name="gender" value="female" ngModel type="radio"></label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-button" [mat-dialog-close]="form.value">Sign Up</button>
+    </form>
+  </div>
+
+
+</section>

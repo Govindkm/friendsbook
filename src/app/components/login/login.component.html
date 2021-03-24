@@ -1,0 +1,23 @@
+<div class="body-container">
+    <header class="container">
+        <div class="form-container">
+            <section class="item left">
+                <div class="text-logo"><h1>friendsbook</h1></div>
+                <h3>Enjoy the new Experience with us!!</h3>
+            </section>
+            <section class="item right">
+                <mat-card class="card">
+                    <mat-card-content class="card-content">
+                        <form #form="ngForm" class="login-form" (submit)="login(form)" class="login-form">
+                            <input type="email" name="email" ngModel placeholder="Email address">
+                            <input type="password" name="password" ngModel placeholder="Password">
+                        </form>
+                        <button type="submit" class="login-btn">Log In</button>
+                        <a href="#">Forgotten account?</a>
+                        <button class="new-account-btn" (click)="register()">Create New Account</button>
+                    </mat-card-content>
+                </mat-card>
+            </section>
+        </div>
+    </header>
+</div>

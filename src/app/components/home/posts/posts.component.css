@@ -1,0 +1,45 @@
+/* create post design starts here */
+mat-card{
+    margin-bottom: 1em;
+}
+
+.form-field{
+    width: 100%;
+}
+
+.camera-position {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.image-upload{
+    display: none;
+}
+
+.create-post button{
+    background-color: #19b3f0;
+    color: white;
+}
+
+mat-card-actions{
+    margin:0
+}
+
+/* create post design ends here */
+
+
+/* ##### "no post" card does not have any css ##### */
+
+/* spinner design begins here */
+
+.spinner-container{
+    display: flex; 
+    justify-content: center; 
+    background: white;
+}
+
+.spinner ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: var(--primary-color);
+}
+
+/* spinner design ends here */
