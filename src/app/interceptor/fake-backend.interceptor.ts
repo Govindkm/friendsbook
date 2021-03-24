@@ -47,7 +47,8 @@ export class FakeBackendService implements HttpInterceptor{
   isValid(headers?){
     let authenticationToken =  headers.get("Authorization");
     // check auth token with all user
-    let user = users.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
+    console.log("isValid check")
+    let user = users.find(user => authenticationToken === user.password);
     if(user){
         return true;
     }else{
@@ -67,19 +68,20 @@ export class FakeBackendService implements HttpInterceptor{
     // })).
     pipe(switchMap(response=>{
       console.log("LOGIN AUTHENTICATE")
-      console.log(response)
+      // console.log(response)
       response.forEach(x=>{
         let nuserobj = new User_BE(x.email,x.password,x.firstName,false)
         this.newUserAuth.push(nuserobj)
       })
       console.log(this.newUserAuth)
-      console.log("out")
+      // console.log("out")
       // newUserAuth= response.toString
-      console.log("hi")
-      let nUser=this.newUserAuth.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
-      let user = users.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
+      
+      
+      let nUser=this.newUserAuth.find(user => authenticationToken === user.password);
+      // let user = users.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
       console.log(nUser)
-      console.log(nUser)
+      // console.log(nUser)
       if(nUser){
         // credentials are valid
         return this.authorized(nUser);
@@ -98,7 +100,7 @@ export class FakeBackendService implements HttpInterceptor{
 
   unauthorized(){
     // create and return an Observable : error
-    return throwError({status : 401, error : {message : "Unautherized"}});
+    return throwError({status : 401, error : {message : "Unauthorized"}});
   }
 
   NewReg(){
@@ -106,11 +108,12 @@ export class FakeBackendService implements HttpInterceptor{
     let newUser=JSON.parse(sessionStorage.getItem('currentUser'))
     console.log(newUser)
     this.http.post(server_URL,newUser).subscribe(response=>{
-      console.log(response)
+      // console.log(response)
     })
-    let newUserObj = new User_BE(newUser['email'],newUser['password'],newUser['firstName'],false)
+    let authenticationToken = "Bearer " + window.btoa(newUser['email'] + ":" + newUser['password'])
+    let newUserObj = new User_BE(newUser['email'],authenticationToken,newUser['firstName'],false)
     users.push(newUserObj)
-    console.log("New USer Addition")
-    console.log(users)
+    console.log("New User Addition")
+    // console.log(users)
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
@@ -10,11 +10,30 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private route:Router,
+  isUserloggedin:boolean = false;
+  constructor(private router:Router,
     private authService:AuthenticationService
-    ) { }
+    ) { 
+      this.isUserloggedin= this.authService.isUserLoggedIn()
+      // console.log("Navbar")
+      // console.log(this.isUserloggedin)
+    }
 
   ngOnInit(): void {
+    this.router.events.subscribe(event =>{
+      if (event instanceof NavigationStart){
+        //  console.log(event.url)
+        //  console.log("ROUTER CHANGE LOGIN STATUS")
+         this.isUserloggedin= this.authService.isUserLoggedIn()
+        //  console.log(this.isUserloggedin)
+      }
+   })
   }
+
+
+
+  
+
+  
 
 }

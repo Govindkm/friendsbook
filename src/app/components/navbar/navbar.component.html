@@ -2,7 +2,7 @@
     <div class="fb-logo icon">fb</div>
 
     <!-- this contains the icon based navigation -->
-    <div class="center" >
+    <div class="center" *ngIf = "isUserloggedin">
         <div class="icon">
             <a [routerLink] = "'/home'"> Home</a>
         </div>
@@ -17,10 +17,10 @@
 
     <!-- this contains text based navigation -->
     <div class="right">
-        <div class="icon"><div class="icon">
+        <div class="icon"><div class="icon" *ngIf = "isUserloggedin">
             <a [routerLink] = "'/settings'"> Settings</a>
         </div></div>
-        <div class="icon"><a [routerLink]= "'/logout'"> Logout</a></div>
+        <div class="icon" *ngIf = "isUserloggedin"><a [routerLink]= "'/logout'"> Logout</a></div>
     </div>
 
 </nav>

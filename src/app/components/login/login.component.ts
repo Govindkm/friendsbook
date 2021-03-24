@@ -50,7 +50,9 @@ export class LoginComponent implements OnInit {
   
       dialogRef.afterClosed().subscribe(result => {
         console.log('The Registration dialog was closed');
-        console.log(result);
+        // console.log(result.password);
+        result.password = "Bearer " + window.btoa(result.email + ":" + result.password)
+        // console.log(result.password)
         sessionStorage.setItem('currentUser', JSON.stringify(result));
         this.registrationForm = result;
         this.Fbend.NewReg()
@@ -65,6 +67,7 @@ export class LoginComponent implements OnInit {
       });
   
       dialogRef.afterClosed().subscribe(result => {
+        console.log(result)
         console.log('The reset-Pwd dialog was closed');
       });
 

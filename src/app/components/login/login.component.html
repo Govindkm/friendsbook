@@ -10,11 +10,27 @@
             <section class="item right">
                 <mat-card class="card">
                     <mat-card-content class="card-content">
+<<<<<<< Updated upstream
                         <form #form="ngForm" class="login-form" (ngSubmit)="login(form)" class="login-form">
 
                             <input type="email" name="email" ngModel placeholder="Email address">
 
                             <input type="password" name="password" ngModel placeholder="Password">
+=======
+                        <form #form="ngForm" class="login-form" (submit)="login(form)" class="login-form">
+
+                            <input type="email" name="email" ngModel placeholder="Email address" required email>
+
+                            <div *ngIf="form.value.email?.invalid && (form.email?.dirty || form.email.touched)"
+                                    class="alert alert-danger">
+                                    Email is required.
+                                <div *ngIf="form.email?.errors.required">
+                                    Email is required.
+                                </div>
+                            </div>
+
+                            <input type="password" name="password" ngModel placeholder="Password" required>
+>>>>>>> Stashed changes
 
                             <button type="submit" class="login-btn">Log In</button>
                         </form>
