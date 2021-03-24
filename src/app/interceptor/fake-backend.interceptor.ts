@@ -113,6 +113,7 @@ export class FakeBackendService implements HttpInterceptor{
     // let authenticationToken = "Bearer " + window.btoa(newUser['email'] + ":" + newUser['password'])
     // let newUserObj = new User_BE(newUser['email'],authenticationToken,newUser['firstName'],false)
     // users.push(newUserObj)
+    
     console.log("New User Addition")
     // console.log(users)
   }
