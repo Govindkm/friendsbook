@@ -29,6 +29,7 @@ export class NavbarComponent implements OnInit {
       }
    })
   }
+<<<<<<< Updated upstream
 
 
 
@@ -36,4 +37,6 @@ export class NavbarComponent implements OnInit {
 
   
 
+=======
+>>>>>>> Stashed changes
 }

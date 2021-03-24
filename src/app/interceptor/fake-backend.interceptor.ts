@@ -77,11 +77,18 @@ export class FakeBackendService implements HttpInterceptor{
       // console.log("out")
       // newUserAuth= response.toString
       
+<<<<<<< Updated upstream:src/app/interceptor/fake-backend.interceptor.ts
       
+=======
+>>>>>>> Stashed changes:src/app/interceptors/fake-backend.interceptor.ts
       let nUser=this.newUserAuth.find(user => authenticationToken === user.password);
       // let user = users.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
       console.log(nUser)
       // console.log(nUser)
+<<<<<<< Updated upstream:src/app/interceptor/fake-backend.interceptor.ts
+=======
+      this.newUserAuth=[]
+>>>>>>> Stashed changes:src/app/interceptors/fake-backend.interceptor.ts
       if(nUser){
         // credentials are valid
         return this.authorized(nUser);
@@ -110,9 +117,15 @@ export class FakeBackendService implements HttpInterceptor{
     this.http.post(server_URL,newUser).subscribe(response=>{
       // console.log(response)
     })
+<<<<<<< Updated upstream:src/app/interceptor/fake-backend.interceptor.ts
     let authenticationToken = "Bearer " + window.btoa(newUser['email'] + ":" + newUser['password'])
     let newUserObj = new User_BE(newUser['email'],authenticationToken,newUser['firstName'],false)
     users.push(newUserObj)
+=======
+    // let authenticationToken = "Bearer " + window.btoa(newUser['email'] + ":" + newUser['password'])
+    // let newUserObj = new User_BE(newUser['email'],authenticationToken,newUser['firstName'],false)
+    // users.push(newUserObj)
+>>>>>>> Stashed changes:src/app/interceptors/fake-backend.interceptor.ts
     console.log("New User Addition")
     // console.log(users)
   }
