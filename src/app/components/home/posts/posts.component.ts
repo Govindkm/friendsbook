@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-
+  posts:Post[];
+  isLoading:boolean=true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onPost(){
+
+  }
+
+  onHidePostClick(){
+    
+  }
 }
