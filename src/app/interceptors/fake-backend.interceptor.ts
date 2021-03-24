@@ -54,11 +54,7 @@ export class FakeBackendService implements HttpInterceptor, OnInit{
   }
 
   updateUsers(){
-    return this.http.get(server_URL).subscribe((users)=>{
-      for(let user of users){
-        
-      }
-    })
+   console.log("inside update users");
   }
 
   isValid(headers?){
