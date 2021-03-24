@@ -115,5 +115,6 @@ export class FakeBackendService implements HttpInterceptor{
     // users.push(newUserObj)
     console.log("New User Addition")
     // console.log(users)
+    sessionStorage.clear();
   }
 }

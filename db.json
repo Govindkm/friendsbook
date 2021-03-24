@@ -25,7 +25,6 @@
       "dob": "0001-03-12",
       "gender": "male",
       "id": 2
-
     },
     {
       "firstName": "qwer",
@@ -34,7 +33,16 @@
       "password": "Bearer cXdlcjpxd2Vy",
       "dob": "0001-02-01",
       "gender": "male",
-
+      "id": 3
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@test.com",
+      "password": "Bearer dGVzdEB0ZXN0LmNvbTp0ZXN0MQ==",
+      "dob": "0001-11-11",
+      "gender": "male",
+      "id": 4
     }
   ]
 }

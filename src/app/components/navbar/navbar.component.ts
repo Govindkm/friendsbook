@@ -15,8 +15,8 @@ export class NavbarComponent implements OnInit {
     private authService:AuthenticationService
     ) { 
       this.isUserloggedin= this.authService.isUserLoggedIn()
-      // console.log("Navbar")
-      // console.log(this.isUserloggedin)
+      // console.log("ROUTER CHANGE LOGIN STATUS")
+      console.log(this.isUserloggedin)
     }
 
   ngOnInit(): void {

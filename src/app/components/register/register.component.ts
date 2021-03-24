@@ -19,12 +19,8 @@ function range(start, end) {
 })
 export class RegisterComponent implements OnInit {
  
-  days:number[];
-  months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-  years:number[]
   constructor() { 
-    this.days=range(1,31);
-    this.years=range(1900,2050);
+    
   }
 
   ngOnInit(): void {
