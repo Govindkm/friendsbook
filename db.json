@@ -2,15 +2,14 @@
   "users": [
     {
       "firstName": "new",
-<<<<<<< Updated upstream
       "lastName": "new",
       "email": "new@mail",
       "password": "Bearer bmV3QG1haWw6bmV3MQ==",
       "dob": "0001-11-11",
       "gender": "male",
-<<<<<<< Updated upstream
       "id": 3
-=======
+    },
+    {
       "lastName": "new1",
       "email": "new@mail",
       "password": "Bearer bmV3QG1haWw6bmV3MQ==",
@@ -26,7 +25,7 @@
       "dob": "0001-03-12",
       "gender": "male",
       "id": 2
->>>>>>> Stashed changes
+
     },
     {
       "firstName": "qwer",
@@ -35,14 +34,7 @@
       "password": "Bearer cXdlcjpxd2Vy",
       "dob": "0001-02-01",
       "gender": "male",
-<<<<<<< Updated upstream
-      "id": 4
-=======
-      "id": 1
->>>>>>> Stashed changes
-=======
-      "id": 3
->>>>>>> Stashed changes
+
     }
   ]
 }

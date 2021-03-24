@@ -9,13 +9,13 @@ import { AuthenticationService } from '../services/authentication.service';
 export class AuthGuardService implements CanActivate{
 
   authenticated:boolean;
-  constructor(private router:Router,private authService:AuthenticationService) {
+  constructor(private router:Router, private authService:AuthenticationService) {
     this.authenticated=this.authService.isUserLoggedIn();
    }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     this.authenticated=this.authService.isUserLoggedIn();
-    console.log("Auth Guard")
-    console.log(this.authenticated)
+    console.log("Auth Guard");
+    console.log(this.authenticated);
     
     if(this.authenticated){
       this.router.navigate(['/home']);

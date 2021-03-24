@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from 'src/app/models/post.model';
 
 @Component({
   selector: 'app-posts',
@@ -20,4 +21,5 @@ export class PostsComponent implements OnInit {
   onHidePostClick(){
     
   }
+
 }

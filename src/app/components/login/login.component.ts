@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { FakeBackendService } from 'src/app/interceptor/fake-backend.interceptor';
+import { FakeBackendService } from 'src/app/interceptors/fake-backend.interceptor';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { RegisterComponent } from '../register/register.component';
 import { ResetPasswordComponent } from '../reset-password/reset-password.component';

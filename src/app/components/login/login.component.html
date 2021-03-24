@@ -1,29 +1,16 @@
 <div class="body-container">
     <header class="container">
         <div class="form-container">
-            
             <section class="item left">
                 <div class="text-logo"><h1>friendsbook</h1></div>
                 <h3>Enjoy the new Experience with us!!</h3>
             </section>
-
             <section class="item right">
                 <mat-card class="card">
                     <mat-card-content class="card-content">
                         <form #form="ngForm" class="login-form" (submit)="login(form)" class="login-form">
-
-                            <input type="email" name="email" ngModel placeholder="Email address" required email>
-
-                            <div *ngIf="form.value.email?.invalid && (form.email?.dirty || form.email.touched)"
-                                    class="alert alert-danger">
-                                    Email is required.
-                                <div *ngIf="form.email?.errors.required">
-                                    Email is required.
-                                </div>
-                            </div>
-
-                            <input type="password" name="password" ngModel placeholder="Password" required>
-
+                            <input type="email" name="email" ngModel placeholder="Email address">
+                            <input type="password" name="password" ngModel placeholder="Password">
                             <button type="submit" class="login-btn">Log In</button>
                         </form>
                         

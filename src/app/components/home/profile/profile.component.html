@@ -1,1 +1,21 @@
-<p style="color:black">profile works!</p>
+<mat-card class="profile-card">
+    <img mat-card-image src="/assets/background.png" class="card-img-top" alt="profile background">
+    <div>
+        <label for="file-input">
+            <div *ngIf="isImageLoaded" fxLayoutAlign="center">
+                <span *ngIf="isImageAvailable">
+                    <img [src]="imageToShow" alt="sample profile photo" class="profile-photo">
+                </span>
+            </div>
+        </label>
+        <input type="file" name="picture" id="file-input" (change)="onProfilePhotoUpload($event)" accept="image/*" />
+    </div>
+
+    <p class="user-name">userFirstName userLastName</p>
+    <p class="user-address">userCity</p>
+    <hr>
+    <div class="user-info">noOfConnections</div>
+    <hr>
+    <div class="user-info">noOfPosts</div>
+    <hr>
+</mat-card>
