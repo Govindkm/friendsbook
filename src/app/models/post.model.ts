@@ -1,11 +1,9 @@
 export class Post{
-    id: string;
+    postID:number;
+    firstName: string;
+    lastName: string;
+    email: string;
     post: string;
-    userId: string;
-    userPhotoId: string;
-    postImageId: string;
-    userName: string;
-    isAdmin: boolean;
+    time: string;
     isActive: boolean;
-    postTimer: string;
 }

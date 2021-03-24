@@ -1,15 +1,18 @@
 <!-- create post section -->
 <mat-card class="create-post">
     <mat-card-content>
-        <form (ngSubmit)="onPost()" #form="ngForm">
+        <form (ngSubmit)="onPost(form)" #form="ngForm">
             <mat-form-field class="form-field">
-                <input matInput type="text" class="title" placeholder="What's on your mind?">
+                <input matInput type="text" name="post" class="title" placeholder="What's on your mind?" ngModel>
             </mat-form-field>
             <mat-card-actions align="end">
-                <label for="image-input">
+                <!-- image input yet to be handled -->
+
+                <!-- <label for="image-input">
                     <i class="fa fa-camera camera-position" appIcon title="Add a picture"></i>
                 </label>
-                <input type="file" class="image-upload" id="image-input" accept="image/*" />
+                <input type="file" class="image-upload" id="image-input" accept="image/*" /> -->
+
                 <button mat-raised-button type="submit">post</button>
             </mat-card-actions>
         </form>
