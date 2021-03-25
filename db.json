@@ -52,8 +52,34 @@
       "password": "Bearer dGVzdDp0ZXN0",
       "dob": "2021-01-01",
       "gender": "male",
-      "id": 6,
-      "posts": 12
+      "id": 6
+    },
+    {
+      "firstName": "asdf",
+      "lastName": "asdf",
+      "email": "asdf",
+      "password": "Bearer YXNkZjphc2Rm",
+      "dob": "0001-11-11",
+      "gender": "male",
+      "id": 7
+    },
+    {
+      "firstName": "new",
+      "lastName": "test",
+      "email": "new@test",
+      "password": "Bearer bmV3QHRlc3Q6bmV3MQ==",
+      "dob": "0001-11-11",
+      "gender": "male",
+      "id": 8
+    },
+    {
+      "firstName": "another",
+      "lastName": "test",
+      "email": "another@test",
+      "password": "Bearer YW5vdGhlckB0ZXN0OnRlc3Q=",
+      "dob": "0001-01-01",
+      "gender": "male",
+      "id": 9
     }
   ],
   "posts": [
@@ -136,6 +162,7 @@
       "isActive": true,
       "image": null,
       "id": 10
+
     }
   ]
 }

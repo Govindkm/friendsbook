@@ -58,7 +58,7 @@
             </span>
 
             <ng-template #activeUsersPost>
-                <div fxFlex="5%" *ngIf=post.isMyPost>
+                <div fxFlex="5%" *ngIf="post.isMyPost">
                     <i class="fa fa-ban custom-icon" (click)="onHidePostClick(post)" matTooltip="Hide Post"></i>
                 </div>
             </ng-template>
