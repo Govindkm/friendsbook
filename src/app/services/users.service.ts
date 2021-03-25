@@ -37,7 +37,13 @@ export class UsersService {
         var url = usersURL + '/' + this.auth.isUserLoggedIn();
         return this.http.get(url)
         .pipe(map(responseData => {
-          const user:User = new User(responseData['id'],responseData['firstName'],responseData['lastName'],responseData['dob'], responseData['gender'],responseData['email'],responseData['posts'],responseData['passwprd'],false, true, responseData['phone'], responseData['city'], responseData['state'], responseData['country'], responseData['pincode'], responseData['photoId']);
+          const user:User = new User(responseData['id'],responseData['firstName'],responseData['lastName'],
+          
+          responseData['dob'], responseData['gender'],responseData['email'],responseData['posts'],
+
+          responseData['passwprd'],false, true, responseData['phone'], responseData['city'], 
+
+          responseData['state'], responseData['country'], responseData['pincode'], responseData['photoId']);
           return user;
         }));        
     }

@@ -79,7 +79,9 @@
       "password": "Bearer YW5vdGhlckB0ZXN0OnRlc3Q=",
       "dob": "0001-01-01",
       "gender": "male",
-      "id": 9
+      "id": 9,
+      "posts": 5
+      
     }
   ],
   "posts": [
@@ -90,6 +92,46 @@
       "isActive": true,
       "image": null,
       "id": 1
+    },
+    {
+      "email": "another@test",
+      "post": "new test",
+      "time": "1616697855204",
+      "isActive": true,
+      "image": null,
+      "id": 2
+    },
+    {
+      "email": "another@test",
+      "post": "wq",
+      "time": "1616697865351",
+      "isActive": true,
+      "image": null,
+      "id": 3
+    },
+    {
+      "email": "another@test",
+      "post": "qwe",
+      "time": "1616697866709",
+      "isActive": true,
+      "image": null,
+      "id": 4
+    },
+    {
+      "email": "another@test",
+      "post": "qwqweqwe",
+      "time": "1616697868471",
+      "isActive": true,
+      "image": null,
+      "id": 5
+    },
+    {
+      "email": "another@test",
+      "post": "qwrqrwqrwe",
+      "time": "1616697870405",
+      "isActive": true,
+      "image": null,
+      "id": 6
     }
   ]
 }

@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(form:NgForm){
+    ///Current User isActive set flag
     this.authService.authenticate(form.value.email, form.value.password)
     .subscribe(
       // authenticate : success
@@ -34,7 +35,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
         this.isValid = true;
       },
-      // unautherized : failure
+      // unauthorized : failure
       (error)=>{
         console.log(error);
         this.isValid = false;
