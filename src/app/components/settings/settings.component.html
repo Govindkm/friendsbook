@@ -1,1 +1,52 @@
-<p>settings works!</p>
+<section class="register">
+    <div class="header">
+      <h3 mat-dialog-title>Settings</h3>
+      <p>Change Your Settings as You wish</p>
+    </div>
+  
+    <div class="body">
+      <form #form="ngForm" (ngSubmit)= "onSubmit(form)">
+        <div class="user-name">
+          <input type="text" placeholder="FirstName" name="firstName" ngModel >
+          <input type="text" placeholder="LastName" name="lastName" ngModel >
+        </div>
+        <div class="user-name-phone">
+            <input type="text" placeholder="phone" name="phone" ngModel >
+        </div>
+        <div class="user-name">
+          <input type="text" placeholder="city" name="city" ngModel >
+          <input type="text" placeholder="state" name="state" ngModel >
+          <input type="text" placeholder="country" name="country" ngModel >
+          <input type="text" placeholder="pincode" name="pincode" ngModel >
+        </div>
+        <div class="email-password">
+          
+          
+          <input type="text" placeholder="pincode" name="pincode" ngModel >
+          <input type="text" placeholder="photoId" name="photoId" ngModel >
+          <!-- <div class="row" >
+            <input type="text" placeholder="Email" name="email" ngModel #email="ngModel" required email>
+          </div> -->  
+          <input type="password" placeholder="Password" name="password" ngModel >
+        </div>
+  
+        <div class="date-of-birth">
+          <label for="dob">Date of Birth</label>
+          <input style="display:inline-block" name="dob" id="dob" ngModel type="date" >
+        </div>
+  
+        <div class="gender">
+          <label>IsAdmin</label>
+          <div class="radio">
+            <label class="radbtn">Yes <input name="isAdmin" value="yes" ngModel type="radio" ></label>
+            <label class="radbtn">No <input name="isAdmin" value="no" ngModel type="radio"></label>
+          </div>
+        </div>
+        
+        <button type="submit" class="submit-button" 
+        [disabled] = "!form.valid ">Update</button>
+      </form>
+    </div>
+  
+  
+  </section>

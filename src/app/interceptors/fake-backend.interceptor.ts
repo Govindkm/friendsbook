@@ -1,5 +1,5 @@
 import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { User_BE } from '../models/user_be.model';
 import {map, switchMap} from 'rxjs/operators'
@@ -18,15 +18,14 @@ const server_URL= "http://localhost:3000/users"
 })
 export class FakeBackendService implements HttpInterceptor{
 
-  
+  status:boolean
 
   constructor(private http: HttpClient, private usersService:UsersService) {
-    usersService.getUsers()
-    .subscribe(data=>{
-      //console.log(data);
-      users = data;
-    })
+    
    }
+  ngOnInit(): void {
+    
+  }
 
   newUserAuth:Array<User_BE>=[];
   intercept(request: HttpRequest<any>, next: HttpHandler
@@ -46,21 +45,44 @@ export class FakeBackendService implements HttpInterceptor{
       
       default :
             //console.log(users);
-            if(this.isValid(headers))
+            if(this.isValid(headers)){ console.log("Status Update")
+            if(this.status){
+              console.log("passed")
               return next.handle(request); 
-            return this.unauthorized();  
+            }
+            console.log("FAIL")
+            return this.unauthorized(); 
+          }
+            
     }
   }
 
   isValid(headers?){
     let authenticationToken =  headers.get("Authorization");
-    // check auth token with all user
-    let user = users.find(user => authenticationToken === user.password);
-    if(user){
+    this.usersService.getUsers()
+    .subscribe(data=>{
+      //console.log(data);
+      users = data;
+      console.log(users)
+      let user = users.find(user => authenticationToken === user.password);
+      console.log("user");
+      
+      console.log(user)
+      
+      if(user){
+        this.status=true
+        console.log(this.status)
         return true;
-    }else{
-      return false;
-    }
+      }
+      else{
+        this.status=false
+        console.log(this.status)
+        return false;
+      }
+    })
+    // console.log(users)
+    // check auth token with all user
+    return true
   }
 
   authenticate(headers?){
@@ -92,6 +114,7 @@ export class FakeBackendService implements HttpInterceptor{
       if(nUser){
         // credentials are valid store user id to enable user editing using json server
         sessionStorage.setItem('id', nUser.userId.toString());
+        console.log(this.authorized(nUser))
         return this.authorized(nUser);
       }else{
         return this.unauthorized();
