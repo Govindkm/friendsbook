@@ -32,7 +32,7 @@
 
 
 <!-- #### POST LOADING indicator #### -->
-<div class="progress-spinner" *ngIf="isLoading">
+<div class="progress-spinner" *ngIf="">
     <mat-card class="spinner">
         <div class="spinner-container">
         <mat-spinner></mat-spinner>
@@ -50,8 +50,8 @@
                 <img [src]="post.userIcon" class="user-profile-photo">
             </span>
             <span fxFlex="90%">
-                <div class="show-posts-header">{{ post.userName }} </div>
-                <div class="profession">{{post.profession}}</div>
+                <div class="show-posts-header">{{ post.id }} </div>
+                <div class="profession">{{post.email}}</div>
             </span>
             <span fxFlex="5%" *ngIf="activeUserObject.isAdmin; else activeUsersPost">
                 <i class="fa fa-ban custom-icon" (click)="onHidePostClick(post)" matTooltip="Hide Post"></i>
@@ -73,7 +73,7 @@
             <div *ngIf=!post.isPostImage>
                 <div class="show-posts-body">{{ post.post }}</div>
             </div>
-            <div class="timer">{{post.postTimer}} ago</div>
+            <div class="timer">Posted {{post.time}} ago</div>
             <hr class="base-line">
         </mat-card-content>
     </mat-card>

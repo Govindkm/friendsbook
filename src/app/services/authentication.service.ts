@@ -52,10 +52,10 @@ export class AuthenticationService {
 
   // to check if any user is logged in
   isUserLoggedIn(){
-    let loginId = sessionStorage.getItem("email");
+    let loginId = sessionStorage.getItem("id");
     if(loginId == null)
       return false;
-    return true;  
+    return loginId;  
   }
 
   // logout 

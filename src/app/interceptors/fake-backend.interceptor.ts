@@ -3,16 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { User_BE } from '../models/user_be.model';
 import {map, switchMap} from 'rxjs/operators'
+import { UsersService } from '../services/users.service';
+import { User } from '../models/user.model';
 
 
 
 // credential repository/collection
-let users : Array<User_BE> = [
-  new User_BE("first@mail.com", "abc", "User1", true),
-  new User_BE("second@mail.com", "abc", "User2", true),
-  new User_BE("third@mail.com", "abc", "User3", false),
-  new User_BE("fourth@mail.com", "abc", "User4",false)
-];
+let users : Array<User>
 
 const server_URL= "http://localhost:3000/users"
 
@@ -23,7 +20,13 @@ export class FakeBackendService implements HttpInterceptor{
 
   
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private usersService:UsersService) {
+    usersService.getUsers()
+    .subscribe(data=>{
+      //console.log(data);
+      users = data;
+    })
+   }
 
   newUserAuth:Array<User_BE>=[];
   intercept(request: HttpRequest<any>, next: HttpHandler
@@ -41,7 +44,8 @@ export class FakeBackendService implements HttpInterceptor{
       case url.endsWith("/posts"):
           return next.handle(request);
       
-      default :  
+      default :
+            //console.log(users);
             if(this.isValid(headers))
               return next.handle(request); 
             return this.unauthorized();  
@@ -51,7 +55,7 @@ export class FakeBackendService implements HttpInterceptor{
   isValid(headers?){
     let authenticationToken =  headers.get("Authorization");
     // check auth token with all user
-    let user = users.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
+    let user = users.find(user => authenticationToken === user.password);
     if(user){
         return true;
     }else{
@@ -110,6 +114,8 @@ export class FakeBackendService implements HttpInterceptor{
   NewReg(){
     console.log("FAKE BACKEND")
     let newUser=JSON.parse(sessionStorage.getItem('currentUser'))
+    newUser['isAdmin'] = false;
+    newUser['isActive'] = false;
     console.log(newUser)
     this.http.post(server_URL,newUser).subscribe(response=>{
       // console.log(response)
