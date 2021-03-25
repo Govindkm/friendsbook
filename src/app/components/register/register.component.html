@@ -7,41 +7,29 @@
   <div class="body">
     <form #form="ngForm">
       <div class="user-name">
-        <input type="text" placeholder="FirstName" name="firstName" ngModel required>
-        <input type="text" placeholder="LastName" name="lastName" ngModel required>
+        <input type="text" placeholder="FirstName" name="firstName" ngModel>
+        <input type="text" placeholder="LastName" name="lastName" ngModel>
       </div>
 
       <div class="email-password">
-        <div class="row" >
-          <input type="text" placeholder="Email" name="email" ngModel #email="ngModel" required email>
-
-          <button class="check-button" style="margin-left: 10px;" (click)="checkAvailablity(email)" >
-            Check Availablity</button>
-            
-          <span *ngIf="notAvailable && clicked" style="color:red">{{checkAvailablity(email)}}</span>
-          <span *ngIf="!notAvailable && email.touched && email.valid && email.dirty " style="color:green">{{checkAvailablity(email)}}</span>
-          
-          
-        </div>
-
-        <input type="password" placeholder="Password" name="password" ngModel required>
+        <input type="text" placeholder="Email" name="email" ngModel>
+        <input type="password" placeholder="Password" name="password" ngModel>
       </div>
 
       <div class="date-of-birth">
         <label for="dob">Date of Birth</label>
-        <input style="display:inline-block" name="dob" id="dob" ngModel type="date" required>
+        <input style="display:inline-block" name="dob" id="dob" ngModel type="date">
       </div>
 
       <div class="gender">
         <label>Gender</label>
         <div class="radio">
-          <label class="gender">Male <input name="gender" value="male" ngModel type="radio" ></label>
+          <label class="gender">Male <input name="gender" value="male" ngModel type="radio"></label>
           <label class="gender">Female <input name="gender" value="female" ngModel type="radio"></label>
         </div>
       </div>
-      
-      <button type="submit" class="submit-button" [mat-dialog-close]="form.value" 
-      [disabled] = "!form.valid && clicked">Sign Up</button>
+
+      <button type="submit" class="submit-button" [mat-dialog-close]="form.value">Sign Up</button>
     </form>
   </div>
 

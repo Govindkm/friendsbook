@@ -46,16 +46,6 @@
     margin-top: 10px;
 }
 
-.email-password div.row input{
-    flex: 1;
-    outline:none;
-    width:63%;
-    border:1px solid lightgray;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: #F5F6F7;
-}
-
 .email-password input{
     flex: 1;
     outline:none;
@@ -122,20 +112,3 @@
     cursor: pointer;
     margin-top: 2em;
   }
-
-  .check-button {
-    padding: 10px 14px;
-    background-color:rgb(10, 108, 255);
-    font-weight: bold;
-    
-    outline:none;
-    border:none;
-    border-radius: 10px;
-    color:white;
-    cursor: pointer;
-    
-  }
-
-  .ng-invalid.ng-touched {
-    border-color: red;
-}
