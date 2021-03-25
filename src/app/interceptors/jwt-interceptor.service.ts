@@ -14,7 +14,6 @@ export class JwtInterceptorService implements HttpInterceptor{
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // mount the token on each request
     if(this.auth.isUserLoggedIn()){
-      console.log("authorization header being put");
       let authenticationToken = this.auth.getAuthenticationToken();      
       // request = request.clone(<changes>);
       request = request.clone({

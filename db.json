@@ -1,103 +1,60 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "Tester1",
-      "lastName": "testing",
-      "dob": "12-01-1990",
-      "email": "test@test.com",
+      "firstName": "new",
+      "lastName": "new",
+      "email": "new@mail",
+      "password": "Bearer bmV3QG1haWw6bmV3MQ==",
+      "dob": "0001-11-11",
       "gender": "male",
-      "password": "abc"
+      "id": 5
     },
     {
-      "id": 2,
-      "firstName": "Tester2",
-      "lastName": "test",
-      "dob": "12-01-1910",
-      "email": "new@new.com",
-      "gender": "male",
-      "password": "abc1"
+      "firstName": "new",
+      "lastName": "new1",
+      "email": "new@mail",
+      "password": "Bearer bmV3QG1haWw6bmV3MQ==",
+      "dob": "0001-11-11",
+      "gender": "",
+      "id": 1
     },
     {
       "firstName": "aaaa",
       "lastName": "aaaa",
       "email": "aaaa",
-      "password": "aaaa",
-      "dob": "0001-11-11",
+      "password": "Bearer YWFhYTphYTEy",
+      "dob": "0001-03-12",
+      "gender": "male",
+      "id": 2
+    },
+    {
+      "firstName": "qwer",
+      "lastName": "qwer",
+      "email": "qwer",
+      "password": "Bearer cXdlcjpxd2Vy",
+      "dob": "0001-02-01",
       "gender": "male",
       "id": 3
     },
     {
-      "firstName": "Ftest",
-      "lastName": "Ftest",
-      "email": "ftest@test",
-      "password": "test",
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@test.com",
+      "password": "Bearer dGVzdEB0ZXN0LmNvbTp0ZXN0MQ==",
       "dob": "0001-11-11",
       "gender": "male",
       "id": 4
     },
     {
-      "firstName": "govind",
-      "lastName": "mishra",
-      "email": "govind@gmail.com",
-      "password": "test123",
-      "dob": "2000-01-01",
-      "gender": "male",
-      "id": 5
-    },
-    {
-      "firstName": "Test",
-      "lastName": "User",
-      "email": "test@test.com",
-      "password": "test",
-      "dob": "2015-01-01",
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test",
+      "password": "Bearer dGVzdDp0ZXN0",
+      "dob": "2021-01-01",
       "gender": "male",
       "id": 6
-    },
-    {
-      "firstName": "testing",
-      "lastName": "testing",
-      "email": "test@testing.com",
-      "password": "tester",
-      "dob": "2010-01-01",
-      "gender": "male",
-      "id": 7
-    },
-    {
-      "firstName": "obc",
-      "lastName": "obc",
-      "email": "obc@obc",
-      "password": "obc",
-      "dob": "2018-12-31",
-      "gender": "male",
-      "id": 8
-    },
-    {
-      "firstName": "abcd",
-      "lastName": "abcd",
-      "email": "abcd",
-      "password": "abcd",
-      "dob": "2019-01-01",
-      "gender": "male",
-      "id": 9
-    },
-    {
-      "firstName": "alpha",
-      "lastName": "alpha",
-      "email": "alpha",
-      "password": "1234",
-      "dob": "2016-01-01",
-      "gender": "male",
-      "id": 10
     }
   ],
   "posts": [
-    {
-      "id": 1,
-      "email": "aaaa",
-      "post": "Some Random Text......",
-      "time": "",
-      "isActive": "true"
-    }
   ]
 }

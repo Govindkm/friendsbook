@@ -1,5 +1,5 @@
 import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { User_BE } from '../models/user_be.model';
 import {map, switchMap} from 'rxjs/operators'
@@ -19,13 +19,11 @@ const server_URL= "http://localhost:3000/users"
 @Injectable({
   providedIn: 'root'
 })
-export class FakeBackendService implements HttpInterceptor, OnInit{
+export class FakeBackendService implements HttpInterceptor{
 
   
 
   constructor(private http: HttpClient) { }
-  ngOnInit(): void {
-  }
 
   newUserAuth:Array<User_BE>=[];
   intercept(request: HttpRequest<any>, next: HttpHandler
@@ -38,32 +36,22 @@ export class FakeBackendService implements HttpInterceptor, OnInit{
           return this.authenticate(headers);
           
       case url.endsWith("/users") :
-          return next.handle(request)
+          return next.handle(request);
+
+      case url.endsWith("/posts"):
+          return next.handle(request);
+      
       default :  
             if(this.isValid(headers))
-              {
-                console.log("Forwarding to next server.");
-                return next.handle(request); 
-              }
-              {
-                console.log("Unauthorized access!!!");
-                return this.unauthorized();
-              }
-                
+              return next.handle(request); 
+            return this.unauthorized();  
     }
   }
 
-  updateUsers(){
-   console.log("inside update users");
-  }
-
   isValid(headers?){
-    this.updateUsers();
     let authenticationToken =  headers.get("Authorization");
     // check auth token with all user
     let user = users.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
-    console.log("Local user list : " + users);
-    console.log("Matched user is : " + user);
     if(user){
         return true;
     }else{
@@ -83,21 +71,23 @@ export class FakeBackendService implements HttpInterceptor, OnInit{
     // })).
     pipe(switchMap(response=>{
       console.log("LOGIN AUTHENTICATE")
-      console.log(response)
+      // console.log(response)
       response.forEach(x=>{
-        let nuserobj = new User_BE(x.email,x.password,x.firstName,false)
+        let nuserobj = new User_BE(x.email,x.password,x.firstName,false, x.id)
         this.newUserAuth.push(nuserobj)
       })
       console.log(this.newUserAuth)
-      console.log("out")
+      // console.log("out")
       // newUserAuth= response.toString
-      console.log("hi")
-      let nUser=this.newUserAuth.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
-      let user = users.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
+      
+      let nUser=this.newUserAuth.find(user => authenticationToken === user.password);
+      // let user = users.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
       console.log(nUser)
-      console.log(nUser)
+      // console.log(nUser)
+      this.newUserAuth=[]
       if(nUser){
-        // credentials are valid
+        // credentials are valid store user id to enable user editing using json server
+        sessionStorage.setItem('id', nUser.userId.toString());
         return this.authorized(nUser);
       }else{
         return this.unauthorized();
@@ -117,16 +107,18 @@ export class FakeBackendService implements HttpInterceptor, OnInit{
     return throwError({status : 401, error : {message : "Unautherized"}});
   }
 
-  NewReg(newUser){
-    console.log("FAKE BACKEND");
-    newUser=JSON.parse(newUser);
-    console.log(newUser);
+  NewReg(){
+    console.log("FAKE BACKEND")
+    let newUser=JSON.parse(sessionStorage.getItem('currentUser'))
+    console.log(newUser)
     this.http.post(server_URL,newUser).subscribe(response=>{
-      console.log(response);
+      // console.log(response)
     })
-    let newUserObj = new User_BE(newUser['email'],newUser['password'],newUser['firstName'],false)
-    users.push(newUserObj);
-    console.log("New USer Addition");
-    console.log(users);
+    // let authenticationToken = "Bearer " + window.btoa(newUser['email'] + ":" + newUser['password'])
+    // let newUserObj = new User_BE(newUser['email'],authenticationToken,newUser['firstName'],false)
+    // users.push(newUserObj)
+    console.log("New User Addition")
+    // console.log(users)
+    sessionStorage.clear();
   }
 }

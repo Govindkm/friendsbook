@@ -12,22 +12,22 @@ import { PostService } from 'src/app/services/post.service';
 export class PostsComponent implements OnInit {
   posts:Post[];
   isLoading:boolean = true;
-  activeUser:any;
+  activeUserEmail:any;
   isPhoto:boolean;
   constructor(private postService:PostService) {
-    this.activeUser = sessionStorage.getItem("loginId");
+    this.activeUserEmail = sessionStorage.getItem("email");
    }
 
   ngOnInit(): void {
   }
 
   onPost(form:NgForm){
-   // console.log(form);
    var post = {
-     "email":this.activeUser.email,
+     "email":this.activeUserEmail,
      "post":form.value.post,
      "time":Date.now(),
      "isActive":true,
+     "image":null
    }
    this.postService.post(post);
   
