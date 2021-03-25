@@ -16,6 +16,7 @@
           <input type="text" placeholder="Email" name="email" ngModel #email="ngModel" required email>
 
           <button class="check-button" style="margin-left: 10px;" (click)="checkAvailablity(email)" >
+            
             Check Availablity</button>
             
           <span *ngIf="notAvailable && clicked" style="color:red">{{checkAvailablity(email)}}</span>
