@@ -81,7 +81,18 @@
       "gender": "male",
       "id": 9,
       "posts": 5
-      
+    },
+    {
+      "firstName": "another",
+      "lastName": "test",
+      "email": "another@mail",
+      "password": "Bearer YW5vdGhlckBtYWlsOnRlc3Q=",
+      "dob": "0001-11-11",
+      "gender": "male",
+      "isAdmin": false,
+      "isActive": false,
+      "id": 10,
+      "posts": 5
     }
   ],
   "posts": [
@@ -132,6 +143,46 @@
       "isActive": true,
       "image": null,
       "id": 6
+    },
+    {
+      "email": "another@mail",
+      "post": "something",
+      "time": "1616755360017",
+      "isActive": true,
+      "image": null,
+      "id": 7
+    },
+    {
+      "email": "another@mail",
+      "post": "",
+      "time": "1616755530594",
+      "isActive": true,
+      "image": null,
+      "id": 8
+    },
+    {
+      "email": "another@mail",
+      "post": "New",
+      "time": "1616755643595",
+      "isActive": true,
+      "image": null,
+      "id": 9
+    },
+    {
+      "email": "another@mail",
+      "post": "",
+      "time": "1616755729094",
+      "isActive": true,
+      "image": null,
+      "id": 10
+    },
+    {
+      "email": "another@mail",
+      "post": "",
+      "time": "1616755857942",
+      "isActive": true,
+      "image": null,
+      "id": 11
     }
   ]
 }

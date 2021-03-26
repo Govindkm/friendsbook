@@ -45,7 +45,8 @@ export class FakeBackendService implements HttpInterceptor{
       
       default :
             //console.log(users);
-            if(this.isValid(headers)){ console.log("Status Update")
+            if(this.isValid(headers)){ 
+              // console.log("Status Update")
             if(this.status){
               console.log("passed")
               return next.handle(request); 
@@ -63,11 +64,11 @@ export class FakeBackendService implements HttpInterceptor{
     .subscribe(data=>{
       //console.log(data);
       users = data;
-      console.log(users)
+      // console.log(users)
       let user = users.find(user => authenticationToken === user.password);
       console.log("user");
       
-      console.log(user)
+      // console.log(user)
       
       if(user){
         this.status=true
@@ -102,19 +103,19 @@ export class FakeBackendService implements HttpInterceptor{
         let nuserobj = new User_BE(x.email,x.password,x.firstName,false, x.id)
         this.newUserAuth.push(nuserobj)
       })
-      console.log(this.newUserAuth)
+      // console.log(this.newUserAuth)
       // console.log("out")
       // newUserAuth= response.toString
       
       let nUser=this.newUserAuth.find(user => authenticationToken === user.password);
       // let user = users.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
-      console.log(nUser)
+      // console.log(nUser)
       // console.log(nUser)
       this.newUserAuth=[]
       if(nUser){
         // credentials are valid store user id to enable user editing using json server
         sessionStorage.setItem('id', nUser.userId.toString());
-        console.log(this.authorized(nUser))
+        // console.log(this.authorized(nUser))
         return this.authorized(nUser);
       }else{
         return this.unauthorized();
@@ -139,7 +140,7 @@ export class FakeBackendService implements HttpInterceptor{
     let newUser=JSON.parse(sessionStorage.getItem('currentUser'))
     newUser['isAdmin'] = false;
     newUser['isActive'] = false;
-    console.log(newUser)
+    // console.log(newUser)
     this.http.post(server_URL,newUser).subscribe(response=>{
       // console.log(response)
     })

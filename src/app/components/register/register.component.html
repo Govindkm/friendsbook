@@ -40,6 +40,14 @@
           <label class="gender">Female <input name="gender" value="female" ngModel type="radio"></label>
         </div>
       </div>
+
+      <div class="gender">
+        <label>Is Admin???</label>
+        <div class="radio">
+          <label class="gender">Yes <input name="isAdmin" value=true ngModel type="radio" ></label>
+          <label class="gender">No <input name="isAdmin" value=false ngModel type="radio"></label>
+        </div>
+      </div>
       
       <button type="submit" class="submit-button" [mat-dialog-close]="form.value" 
       [disabled] = "!form.valid && clicked">Sign Up</button>

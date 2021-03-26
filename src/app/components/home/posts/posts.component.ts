@@ -16,7 +16,7 @@ import { UtilityService } from 'src/app/services/utility.service';
 })
 export class PostsComponent implements OnInit {
   posts:Post[] = [];
-  isLoading:boolean = false;
+  isLoading:boolean = true;
   activeUserEmail:any;
   activeUserObject:User;
   isPhoto:boolean;
@@ -27,7 +27,14 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getActiveUser().subscribe((data)=>{this.activeUserObject=data});
-    this.updatePostList();
+    console.log("NGONINIT")
+    if(!this.isLoading){
+      console.log("HERE be POSTS")
+      console.log(this.activeUserObject)
+      this.updatePostList();
+    }
+    // this.updatePostList();
+   
   }
 
   onPost(form:NgForm){
@@ -53,7 +60,10 @@ export class PostsComponent implements OnInit {
         this.posts.push(new Post(post['id'], post['email'], post['post'], post['time'], post['isActive'], post['image']));
       });
       console.log(this.posts);
-    })
+      this.isLoading = false;
+    }
+    
+    )
   }
 
   onHidePostClick(){
