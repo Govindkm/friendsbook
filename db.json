@@ -93,12 +93,12 @@
       "isActive": false,
       "id": 10,
       "posts": 5,
-      "phone": "asasf",
-      "city": "aasf",
-      "state": "nopeasfasfasf",
-      "country": "nopeasfasf",
-      "pincode": "nopeasfasf",
-      "photoId": "nopeasdwasdasd"
+      "phone": "phone",
+      "city": "city",
+      "state": "state",
+      "country": "country",
+      "pincode": "pincode",
+      "photoId": "photoid"
     },
     {
       "firstName": "final1",

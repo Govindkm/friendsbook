@@ -41,7 +41,7 @@ export class UsersService {
           
           responseData['dob'], responseData['gender'],responseData['email'],responseData['posts'],
 
-          responseData['passwprd'],false, true, responseData['phone'], responseData['city'], 
+          responseData['passwprd'],responseData['isAdmin'], true, responseData['phone'], responseData['city'], 
 
           responseData['state'], responseData['country'], responseData['pincode'], responseData['photoId']);
           return user;
