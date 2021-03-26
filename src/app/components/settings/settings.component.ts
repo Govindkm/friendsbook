@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -17,9 +18,11 @@ export class SettingsComponent implements OnInit {
   country: string;
   pincode:string;
   photoid: string;
+  password:string;
+  iseditingpwd:boolean = false;
   
 
-  constructor(private userService:UsersService) { }
+  constructor(private userService:UsersService,private router:Router) { }
 
   ngOnInit(): void {
     //Get Active user data from service user.service
@@ -37,14 +40,24 @@ export class SettingsComponent implements OnInit {
       this.country = user.country;
       this.pincode = user.pincode;
       this.photoid=user.photoId;
+      this.password=user.password;
     })
       
 
   }
 
   onSubmit(form:NgForm){
+    const id = +sessionStorage.getItem('id')
     console.log(form.value)
+    this.userService.updateUser(id,form.value)
+    this.router.navigate(['home'])
+    
     //call userservice.updateuser
+  }
+
+  isedit(){
+    this.iseditingpwd=!this.iseditingpwd;
+    return this.iseditingpwd;
   }
 
 }

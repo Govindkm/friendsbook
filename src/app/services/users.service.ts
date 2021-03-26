@@ -50,7 +50,8 @@ export class UsersService {
   }
   
   updateUser(id:Number, dataToAdd){
-    this.http.put(usersURL + '/' + id,dataToAdd).subscribe((response)=>{
+
+    this.http.patch(usersURL + '/' + id,dataToAdd).subscribe((response)=>{
       console.log(response);
     })
   }

@@ -24,8 +24,10 @@
           <input type="text" placeholder="photoId" name="photoId" [(ngModel)] = "photoid" >
           <!-- <div class="row" >
             <input type="text" placeholder="Email" name="email" ngModel #email="ngModel" required email>
-          </div> -->  
-          <input type="password" placeholder="Password" name="password" ngModel >
+          </div> -->
+          
+          <input type="password" placeholder="Password" name="password" [(ngModel)] = "password" [disabled]="isedit()" [hidden]="!isedit()">
+          <button class="submit-button" type="button" (click)= "isedit()">Edit Password</button>  
         </div>
   
         <!-- <div class="date-of-birth">

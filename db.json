@@ -84,7 +84,7 @@
     },
     {
       "firstName": "another",
-      "lastName": "test",
+      "lastName": "mail",
       "email": "another@mail",
       "password": "Bearer YW5vdGhlckBtYWlsOnRlc3Q=",
       "dob": "0001-11-11",
@@ -92,7 +92,31 @@
       "isAdmin": false,
       "isActive": false,
       "id": 10,
-      "posts": 5
+      "posts": 5,
+      "phone": "asasf",
+      "city": "aasf",
+      "state": "nopeasfasfasf",
+      "country": "nopeasfasf",
+      "pincode": "nopeasfasf",
+      "photoId": "nopeasdwasdasd"
+    },
+    {
+      "firstName": "final1",
+      "lastName": "final1",
+      "email": "final1@test",
+      "password": "Bearer ZmluYWwxQHRlc3Q6dGVzdA==",
+      "dob": "0002-02-02",
+      "gender": "male",
+      "isAdmin": false,
+      "isActive": false,
+      "id": 11,
+      "posts": 1,
+      "phone": "aswsdwdwa",
+      "city": "anotherthing new",
+      "state": "new",
+      "country": "new",
+      "pincode": "new",
+      "photoId": "somethingnew"
     }
   ],
   "posts": [
@@ -183,6 +207,14 @@
       "isActive": true,
       "image": null,
       "id": 11
+    },
+    {
+      "email": "final1@test",
+      "post": "something from ",
+      "time": "1616765607055",
+      "isActive": true,
+      "image": null,
+      "id": 12
     }
   ]
 }
