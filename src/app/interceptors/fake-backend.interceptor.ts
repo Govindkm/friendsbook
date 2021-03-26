@@ -100,7 +100,7 @@ export class FakeBackendService implements HttpInterceptor{
       console.log("LOGIN AUTHENTICATE")
       // console.log(response)
       response.forEach(x=>{
-        let nuserobj = new User_BE(x.email,x.password,x.firstName,false, x.id)
+        let nuserobj = new User_BE(x.email,x.password,x.firstName,x.isAdmin, x.id)
         this.newUserAuth.push(nuserobj)
       })
       // console.log(this.newUserAuth)
@@ -109,7 +109,7 @@ export class FakeBackendService implements HttpInterceptor{
       
       let nUser=this.newUserAuth.find(user => authenticationToken === user.password);
       // let user = users.find(user => authenticationToken === "Bearer " + window.btoa(user.loginId + ":" + user.password));
-      // console.log(nUser)
+      console.log(nUser)
       // console.log(nUser)
       this.newUserAuth=[]
       if(nUser){
@@ -132,13 +132,14 @@ export class FakeBackendService implements HttpInterceptor{
 
   unauthorized(){
     // create and return an Observable : error
-    return throwError({status : 401, error : {message : "Unautherized"}});
+    console.log("unauthorized")
+    return throwError({status : 401, error : {message : "Unauthorized"}});
   }
 
   NewReg(){
     console.log("FAKE BACKEND")
     let newUser=JSON.parse(sessionStorage.getItem('currentUser'))
-    newUser['isAdmin'] = false;
+    // newUser['isAdmin'] = false;
     newUser['isActive'] = false;
     // console.log(newUser)
     this.http.post(server_URL,newUser).subscribe(response=>{

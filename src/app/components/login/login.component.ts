@@ -30,13 +30,16 @@ export class LoginComponent implements OnInit {
     this.authService.authenticate(form.value.email, form.value.password)
     .subscribe(
       // authenticate : success
+      
       (response)=>{
+        console.log("Here")
         console.log(response);
         this.router.navigate(['/home']);
         this.isValid = true;
       },
       // unauthorized : failure
       (error)=>{
+        console.log("error")
         console.log(error);
         this.isValid = false;
       }
