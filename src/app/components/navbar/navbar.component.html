@@ -17,6 +17,14 @@
 
     <!-- this contains text based navigation -->
     <div class="right">
+        <div class="icon" *ngIf = "isUserloggedin">
+            <form >
+                <input type="text" placeholder=" Search..." name="search" ngModel #search/>
+                <button class= "button" (click)="Search(search.value)" ><i class="fa fa-search"></i></button>
+            </form>
+            
+        </div>
+
         <div class="icon"><div class="icon" *ngIf = "isUserloggedin">
             <a [routerLink] = "'/settings'"> Settings</a>
         </div></div>

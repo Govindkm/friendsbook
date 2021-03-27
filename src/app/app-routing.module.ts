@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'register', component:RegisterComponent},
   {path:'reset', component:ResetPasswordComponent},
-  {path:'network', component:NetworkComponent},
+  {path:'network/:user', component:NetworkComponent},
   {path:'friends', component:FriendsComponent},
   {path:'settings', component:SettingsComponent},
   {path:'logout', component:LogoutComponent}
