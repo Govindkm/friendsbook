@@ -11,7 +11,7 @@
         <input type="file" name="picture" id="file-input" (change)="onProfilePhotoUpload($event)" accept="image/*" />
     </div>
 
-    <p class="user-name">Name : {{activeUserObject.firstName + ' ' + activeUserObject.firstName}}</p>
+    <p class="user-name">Name : {{activeUserObject.firstName + ' ' + activeUserObject.lastName}}</p>
     <p class="user-address">City : {{activeUserObject.city}}</p>
     <hr>
     <div class="user-info">Connections : {{noOfConnections}}</div>

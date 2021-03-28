@@ -8,13 +8,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NetworkComponent implements OnInit {
 
-  all:boolean = true;
-  parameter:string|number;
-  constructor(private router:Router,private route: ActivatedRoute) { }
+  
+  constructor() { }
 
   ngOnInit(): void {
-    this.parameter=this.route.snapshot.paramMap.get("user");
-    console.log(this.parameter);
+    
   }
 
 }

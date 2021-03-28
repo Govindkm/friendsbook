@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-singleuser',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleuserComponent implements OnInit {
 
-  constructor() { }
+  all:boolean = true;
+  parameter;
+  user;
+  constructor(private router:Router,private route: ActivatedRoute,private userService:UsersService) { }
 
   ngOnInit(): void {
+    this.parameter=this.route.snapshot.paramMap.get("user");
+    if(Number(this.parameter)){
+      this.userService.getUser(this.parameter).subscribe(users=>{
+        this.user = users;
+        console.log(this.user)
+      });
+    }
+    
+  }
+
+  sendRequest(user){
+    console.log("sendRequest")
+    console.log(user)
   }
 
 }

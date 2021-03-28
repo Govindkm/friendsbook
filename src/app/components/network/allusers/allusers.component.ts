@@ -18,4 +18,8 @@ export class AllusersComponent implements OnInit {
     });
   }
 
+  sendRequest(user){
+    console.log(user);
+  }
+
 }

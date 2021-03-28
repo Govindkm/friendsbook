@@ -17,6 +17,19 @@
       "state": "Delhi",
       "country": "India",
       "pincode": "110001"
+    },
+    {
+      "firstName": "another",
+      "lastName": "mail",
+      "email": "another@mail",
+      "password": "Bearer YW5vdGhlckBtYWlsOnRlc3Q=",
+      "dob": "0001-11-11",
+      "gender": "male",
+      "isAdmin": "true",
+      "isActive": false,
+      "photoId": "/assets/default-user.jpg",
+      "id": 2,
+      "posts": 1
     }
   ],
   "posts": [
@@ -117,6 +130,16 @@
       "image": null,
       "userIcon": "https://randomuser.me/api/portraits/men/20.jpg",
       "id": 10
+    },
+    {
+      "email": "another@mail",
+      "name": "another mail",
+      "post": "test",
+      "time": "1616934342077",
+      "isActive": true,
+      "image": null,
+      "userIcon": "/assets/default-user.jpg",
+      "id": 11
     }
   ]
 }
