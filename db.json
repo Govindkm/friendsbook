@@ -2,6 +2,7 @@
   "users": [
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "firstName": "new",
       "lastName": "new",
       "email": "new@mail",
@@ -45,6 +46,8 @@
       "gender": "male",
       "id": 4
 =======
+=======
+>>>>>>> Stashed changes
       "firstName": "test",
       "lastName": "test",
       "email": "test@test",
@@ -161,6 +164,9 @@
       "image": null,
       "userIcon": "https://randomuser.me/api/portraits/men/20.jpg",
       "id": 10
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
   ]

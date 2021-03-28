@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit {
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ngOnInit(): void {
     this.router.events.subscribe(event =>{
       if (event instanceof NavigationStart){
@@ -32,6 +33,8 @@ export class NavbarComponent implements OnInit {
    })
   }
 =======
+=======
+>>>>>>> Stashed changes
     Search(model:NgModel){
         var id = model.value;
         

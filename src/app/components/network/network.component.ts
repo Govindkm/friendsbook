@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class NetworkComponent implements OnInit {
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   constructor() { }
 
   ngOnInit(): void {
 =======
+=======
+>>>>>>> Stashed changes
   all:boolean = true;
   parameter:string|number;
   constructor(private router:Router,private route: ActivatedRoute) { }
@@ -19,6 +22,9 @@ export class NetworkComponent implements OnInit {
   ngOnInit(): void {
     this.parameter=this.route.snapshot.paramMap.get("user");
     console.log(this.parameter);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   }
 

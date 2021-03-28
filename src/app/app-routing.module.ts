@@ -19,11 +19,14 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'reset', component:ResetPasswordComponent},
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   {path:'network', component:NetworkComponent},
   {path:'friends', component:FriendsComponent},
   {path:'settings', component:SettingsComponent},
   {path:'logout', component:LogoutComponent}
 =======
+=======
+>>>>>>> Stashed changes
   {path:'network', component:NetworkComponent,canActivate:[AuthGuardService] ,children:[
     {path:'', component:AllusersComponent},
     {path:':user', component:SingleuserComponent}
@@ -32,6 +35,9 @@ const routes: Routes = [
   {path:'settings', component:SettingsComponent, canActivate:[AuthGuardService]},
   {path:'logout', component:LogoutComponent, canActivate:[AuthGuardService]},
   {path:"**", redirectTo:'login'}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 ];
 
