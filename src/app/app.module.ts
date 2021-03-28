@@ -34,6 +34,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptorService } from './interceptors/jwt-interceptor.service';
 import { FakeBackendService } from './interceptors/fake-backend.interceptor';
 import { LogoutComponent } from './components/logout/logout.component';
+import { AllusersComponent } from './components/network/allusers/allusers.component';
+import { SingleuserComponent } from './components/network/singleuser/singleuser.component';
 
 const material = [
   MatCardModule,
@@ -63,7 +65,9 @@ const material = [
     SettingsComponent,
     FriendsComponent,
     IconDirective,
-    LogoutComponent
+    LogoutComponent,
+    AllusersComponent,
+    SingleuserComponent
   ],
   imports: [
     BrowserModule,

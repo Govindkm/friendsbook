@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, NgModel } from '@angular/forms';
 import { NavigationStart, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
@@ -19,6 +20,7 @@ export class NavbarComponent implements OnInit {
       console.log(this.isUserloggedin)
     }
 
+<<<<<<< Updated upstream
   ngOnInit(): void {
     this.router.events.subscribe(event =>{
       if (event instanceof NavigationStart){
@@ -29,4 +31,44 @@ export class NavbarComponent implements OnInit {
       }
    })
   }
+=======
+    Search(model:NgModel){
+        var id = model.value;
+        
+        console.log(id)
+        if(Number(id)){
+          console.log("This is a number: ",Number(id))
+          let n=Number(id)
+          this.userService.getUsers().subscribe(response=>{
+            console.log(response)
+            let user = response.find(user =>{
+              if(id==user.id){
+                return user
+              }
+            })
+            console.log(user)
+            this.router.navigate(['network',user.id])
+            return user
+          })
+        
+        }
+        else if(id.includes('@')){
+          console.log("This is email: ",id)
+          this.userService.getUsers().subscribe(response=>{
+            console.log(response)
+            let user = response.find(user =>{
+              if(id==user.email){
+                return user;
+              }
+            })
+            console.log(user)
+            this.router.navigate(['network',user.email])
+            return user
+          })
+        }
+        else{
+          alert('Please Enter Id or Email only');
+        }
+    }
+>>>>>>> Stashed changes
 }

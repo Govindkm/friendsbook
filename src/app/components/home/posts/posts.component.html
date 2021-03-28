@@ -44,11 +44,16 @@
     <mat-card class="show-posts">
         <div fxLayout="row">
             <span fxFlex="12%">
-                <img [src]="post.userIcon" class="user-profile-photo">
+                <img src="{{ post.userIcon }}" class="user-profile-photo">
             </span>
             <span fxFlex="90%">
+<<<<<<< Updated upstream
                 <div class="show-posts-header">{{ post.userName }} </div>
                 <div class="profession">{{post.profession}}</div>
+=======
+                <div class="show-posts-header">{{ post.name }} </div>
+                <div class="profession">{{post.email}}</div>
+>>>>>>> Stashed changes
             </span>
             <span fxFlex="5%" *ngIf="activeUserObject.isAdmin; else activeUsersPost">
                 <i class="fa fa-ban custom-icon" (click)="onHidePostClick(post)" matTooltip="Hide Post"></i>

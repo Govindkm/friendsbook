@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="container">
+    <table class="table text-center ">
+        <thead>
+            <tr>
+                <th class="align-middle" scope="col">Profile</th>
+                <th class="align-middle" scope="col">First</th>
+                <th class="align-middle" scope="col">Last</th>
+                <th class="align-middle" scope="col">Gender</th>
+                <th class="align-middle" scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <th class="align-middle" scope="col"><img src="{{user.photoId}}" alt="{{user.email}}" style="max-width: 30%; border-radius: 50%;"></th>
+                <th class="align-middle" scope="col">{{user.firstName}}</th>
+                <th class="align-middle" scope="col">{{user.lastName}}</th>
+                <th class="align-middle" scope="col">{{user.gender}}</th>
+                <th class="align-middle" scope="col"><button class="btn" [ngClass]="['btn-success']">Send request</button></th>
+            </tr>    
+        </tbody>
+    </table>
+</div>

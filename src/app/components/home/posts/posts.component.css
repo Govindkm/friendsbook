@@ -43,3 +43,12 @@ mat-card-actions{
 }
 
 /* spinner design ends here */
+
+/* post design begins here */
+
+.user-profile-photo{
+    max-width: 70%;
+    border-radius: 100%;
+}
+
+/* post design ends here */

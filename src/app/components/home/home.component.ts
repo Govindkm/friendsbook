@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
+import { ProfileComponent } from './profile/profile.component';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild(ProfileComponent) profile:ProfileComponent;
+  constructor(private user:UsersService) { }
 
   ngOnInit(): void {
+  }
+
+  updateProfile(){
+    //console.log('Post Emits')
+    this.profile.update();
   }
 
 }

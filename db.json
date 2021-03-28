@@ -1,6 +1,7 @@
 {
   "users": [
     {
+<<<<<<< Updated upstream
       "firstName": "new",
       "lastName": "new",
       "email": "new@mail",
@@ -43,6 +44,124 @@
       "dob": "0001-11-11",
       "gender": "male",
       "id": 4
+=======
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@test",
+      "password": "Bearer dGVzdEB0ZXN0OnRlc3Q=",
+      "dob": "2010-01-01",
+      "gender": "male",
+      "isAdmin": "true",
+      "isActive": false,
+      "photoId": "https://randomuser.me/api/portraits/men/20.jpg",
+      "id": 1,
+      "posts": 10,
+      "phone": "124578963",
+      "city": "Delhi",
+      "state": "Delhi",
+      "country": "India",
+      "pincode": "110001"
+    }
+  ],
+  "posts": [
+    {
+      "email": "test@test",
+      "post": "Hello",
+      "time": "1616909734766",
+      "isActive": true,
+      "image": null,
+      "userIcon": "/assets/default-user.jpg",
+      "id": 1
+    },
+    {
+      "email": "test@test",
+      "post": "Hello",
+      "time": "1616909738765",
+      "isActive": true,
+      "image": null,
+      "userIcon": "/assets/default-user.jpg",
+      "id": 2
+    },
+    {
+      "email": "test@test",
+      "name": "test test",
+      "post": "Test",
+      "time": "1616910727352",
+      "isActive": true,
+      "image": null,
+      "userIcon": "/assets/default-user.jpg",
+      "id": 3
+    },
+    {
+      "email": "test@test",
+      "name": "test test",
+      "post": "hi",
+      "time": "1616910736759",
+      "isActive": true,
+      "image": null,
+      "userIcon": "/assets/default-user.jpg",
+      "id": 4
+    },
+    {
+      "email": "test@test",
+      "name": "test test",
+      "post": "hello",
+      "time": "1616910742902",
+      "isActive": true,
+      "image": null,
+      "userIcon": "/assets/default-user.jpg",
+      "id": 5
+    },
+    {
+      "email": "test@test",
+      "name": "test test",
+      "post": "hello",
+      "time": "1616910755095",
+      "isActive": true,
+      "image": null,
+      "userIcon": "/assets/default-user.jpg",
+      "id": 6
+    },
+    {
+      "email": "test@test",
+      "name": "test test",
+      "post": "hello",
+      "time": "1616910758519",
+      "isActive": true,
+      "image": null,
+      "userIcon": "/assets/default-user.jpg",
+      "id": 7
+    },
+    {
+      "email": "test@test",
+      "name": "test test",
+      "post": "hello",
+      "time": "1616910761639",
+      "isActive": true,
+      "image": null,
+      "userIcon": "/assets/default-user.jpg",
+      "id": 8
+    },
+    {
+      "email": "test@test",
+      "name": "test test",
+      "post": "hello",
+      "time": "1616910765335",
+      "isActive": true,
+      "image": null,
+      "userIcon": "/assets/default-user.jpg",
+      "id": 9
+    },
+    {
+      "email": "test@test",
+      "name": "test test",
+      "post": "test",
+      "time": "1616913385892",
+      "isActive": true,
+      "image": null,
+      "userIcon": "https://randomuser.me/api/portraits/men/20.jpg",
+      "id": 10
+>>>>>>> Stashed changes
     }
   ]
 }

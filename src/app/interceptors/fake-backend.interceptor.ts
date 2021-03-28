@@ -106,7 +106,14 @@ export class FakeBackendService implements HttpInterceptor{
   NewReg(){
     console.log("FAKE BACKEND")
     let newUser=JSON.parse(sessionStorage.getItem('currentUser'))
+<<<<<<< Updated upstream
     console.log(newUser)
+=======
+    // newUser['isAdmin'] = false;
+    newUser['isActive'] = false;
+    newUser['photoId'] = '/assets/default-user.jpg';
+    // console.log(newUser)
+>>>>>>> Stashed changes
     this.http.post(server_URL,newUser).subscribe(response=>{
       // console.log(response)
     })

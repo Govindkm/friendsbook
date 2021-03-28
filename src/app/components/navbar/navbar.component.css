@@ -51,6 +51,15 @@
     align-items: center;
 }
 
+.searchbar{
+    height: 100%;
+}
+
+.searchbar input{
+    height: 70%;
+    margin: 3% 0;
+}
+
 a{
     text-decoration: none;
     list-style: none;
