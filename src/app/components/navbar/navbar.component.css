@@ -65,3 +65,16 @@ a{
     list-style: none;
     color: white;
 }
+input{
+    outline:none;
+    border:none;
+    border-radius: 2px;
+}
+button{
+    padding-left:5px;
+    outline:none;
+    border:none;
+    background:none;
+    cursor:pointer;
+    
+}

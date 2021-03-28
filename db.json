@@ -1,53 +1,6 @@
 {
   "users": [
     {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "firstName": "new",
-      "lastName": "new",
-      "email": "new@mail",
-      "password": "Bearer bmV3QG1haWw6bmV3MQ==",
-      "dob": "0001-11-11",
-      "gender": "male",
-      "id": 3
-    },
-    {
-      "lastName": "new1",
-      "email": "new@mail",
-      "password": "Bearer bmV3QG1haWw6bmV3MQ==",
-      "dob": "0001-11-11",
-      "gender": "",
-      "id": 1
-    },
-    {
-      "firstName": "aaaa",
-      "lastName": "aaaa",
-      "email": "aaaa",
-      "password": "Bearer YWFhYTphYTEy",
-      "dob": "0001-03-12",
-      "gender": "male",
-      "id": 2
-    },
-    {
-      "firstName": "qwer",
-      "lastName": "qwer",
-      "email": "qwer",
-      "password": "Bearer cXdlcjpxd2Vy",
-      "dob": "0001-02-01",
-      "gender": "male",
-      "id": 3
-    },
-    {
-      "firstName": "test",
-      "lastName": "test",
-      "email": "test@test.com",
-      "password": "Bearer dGVzdEB0ZXN0LmNvbTp0ZXN0MQ==",
-      "dob": "0001-11-11",
-      "gender": "male",
-      "id": 4
-=======
-=======
->>>>>>> Stashed changes
       "firstName": "test",
       "lastName": "test",
       "email": "test@test",
@@ -164,10 +117,6 @@
       "image": null,
       "userIcon": "https://randomuser.me/api/portraits/men/20.jpg",
       "id": 10
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     }
   ]
 }

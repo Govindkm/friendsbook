@@ -1,18 +1,15 @@
 import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { User_BE } from '../models/user_be.model';
 import {map, switchMap} from 'rxjs/operators'
+import { UsersService } from '../services/users.service';
+import { User } from '../models/user.model';
 
 
 
 // credential repository/collection
-let users : Array<User_BE> = [
-  new User_BE("first@mail.com", "abc", "User1", true),
-  new User_BE("second@mail.com", "abc", "User2", true),
-  new User_BE("third@mail.com", "abc", "User3", false),
-  new User_BE("fourth@mail.com", "abc", "User4",false)
-];
+let users : Array<User>
 
 const server_URL= "http://localhost:3000/users"
 
@@ -21,9 +18,14 @@ const server_URL= "http://localhost:3000/users"
 })
 export class FakeBackendService implements HttpInterceptor{
 
-  
+  status:boolean
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private usersService:UsersService) {
+    
+   }
+  ngOnInit(): void {
+    
+  }
 
   newUserAuth:Array<User_BE>=[];
   intercept(request: HttpRequest<any>, next: HttpHandler
@@ -36,24 +38,52 @@ export class FakeBackendService implements HttpInterceptor{
           return this.authenticate(headers);
           
       case url.endsWith("/users") :
-          return next.handle(request)
-      default :  
-            if(this.isValid(headers))
+          return next.handle(request);
+
+      case url.endsWith("/posts"):
+          return next.handle(request);
+      
+      default :
+            //console.log(users);
+            if(this.isValid(headers)){ 
+              // console.log("Status Update")
+            if(this.status){
+              console.log("passed")
               return next.handle(request); 
-            return this.unauthorized();  
+            }
+            console.log("FAIL")
+            return this.unauthorized(); 
+          }
+            
     }
   }
 
   isValid(headers?){
     let authenticationToken =  headers.get("Authorization");
-    // check auth token with all user
-    console.log("isValid check")
-    let user = users.find(user => authenticationToken === user.password);
-    if(user){
+    this.usersService.getUsers()
+    .subscribe(data=>{
+      //console.log(data);
+      users = data;
+      // console.log(users)
+      let user = users.find(user => authenticationToken === user.password);
+      console.log("user");
+      
+      // console.log(user)
+      
+      if(user){
+        this.status=true
+        console.log(this.status)
         return true;
-    }else{
-      return false;
-    }
+      }
+      else{
+        this.status=false
+        console.log(this.status)
+        return false;
+      }
+    })
+    // console.log(users)
+    // check auth token with all user
+    return true
   }
 
   authenticate(headers?){
@@ -70,10 +100,10 @@ export class FakeBackendService implements HttpInterceptor{
       console.log("LOGIN AUTHENTICATE")
       // console.log(response)
       response.forEach(x=>{
-        let nuserobj = new User_BE(x.email,x.password,x.firstName,false)
+        let nuserobj = new User_BE(x.email,x.password,x.firstName,x.isAdmin, x.id)
         this.newUserAuth.push(nuserobj)
       })
-      console.log(this.newUserAuth)
+      // console.log(this.newUserAuth)
       // console.log("out")
       // newUserAuth= response.toString
       
@@ -83,7 +113,9 @@ export class FakeBackendService implements HttpInterceptor{
       // console.log(nUser)
       this.newUserAuth=[]
       if(nUser){
-        // credentials are valid
+        // credentials are valid store user id to enable user editing using json server
+        sessionStorage.setItem('id', nUser.userId.toString());
+        // console.log(this.authorized(nUser))
         return this.authorized(nUser);
       }else{
         return this.unauthorized();
@@ -100,20 +132,17 @@ export class FakeBackendService implements HttpInterceptor{
 
   unauthorized(){
     // create and return an Observable : error
+    console.log("unauthorized")
     return throwError({status : 401, error : {message : "Unauthorized"}});
   }
 
   NewReg(){
     console.log("FAKE BACKEND")
     let newUser=JSON.parse(sessionStorage.getItem('currentUser'))
-<<<<<<< Updated upstream
-    console.log(newUser)
-=======
     // newUser['isAdmin'] = false;
     newUser['isActive'] = false;
     newUser['photoId'] = '/assets/default-user.jpg';
     // console.log(newUser)
->>>>>>> Stashed changes
     this.http.post(server_URL,newUser).subscribe(response=>{
       // console.log(response)
     })

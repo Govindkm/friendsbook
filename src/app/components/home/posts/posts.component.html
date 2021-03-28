@@ -1,15 +1,18 @@
 <!-- create post section -->
 <mat-card class="create-post">
     <mat-card-content>
-        <form (ngSubmit)="onPost()" #form="ngForm">
+        <form (ngSubmit)="onPost(form)" #form="ngForm">
             <mat-form-field class="form-field">
-                <input matInput type="text" class="title" placeholder="What's on your mind?">
+                <input matInput type="text" name="post" class="title" placeholder="What's on your mind?" ngModel>
             </mat-form-field>
             <mat-card-actions align="end">
-                <label for="image-input">
+                <!-- image input yet to be handled -->
+
+                <!-- <label for="image-input">
                     <i class="fa fa-camera camera-position" appIcon title="Add a picture"></i>
                 </label>
-                <input type="file" class="image-upload" id="image-input" accept="image/*" />
+                <input type="file" class="image-upload" id="image-input" accept="image/*" /> -->
+
                 <button mat-raised-button type="submit">post</button>
             </mat-card-actions>
         </form>
@@ -29,7 +32,7 @@
 
 
 <!-- #### POST LOADING indicator #### -->
-<div class="progress-spinner" *ngIf="isLoading">
+<div class="progress-spinner" *ngIf="">
     <mat-card class="spinner">
         <div class="spinner-container">
         <mat-spinner></mat-spinner>
@@ -47,23 +50,15 @@
                 <img src="{{ post.userIcon }}" class="user-profile-photo">
             </span>
             <span fxFlex="90%">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                <div class="show-posts-header">{{ post.userName }} </div>
-                <div class="profession">{{post.profession}}</div>
-=======
-=======
->>>>>>> Stashed changes
                 <div class="show-posts-header">{{ post.name }} </div>
                 <div class="profession">{{post.email}}</div>
->>>>>>> Stashed changes
             </span>
             <span fxFlex="5%" *ngIf="activeUserObject.isAdmin; else activeUsersPost">
                 <i class="fa fa-ban custom-icon" (click)="onHidePostClick(post)" matTooltip="Hide Post"></i>
             </span>
 
             <ng-template #activeUsersPost>
-                <div fxFlex="5%" *ngIf=post.isMyPost>
+                <div fxFlex="5%" *ngIf="post.isMyPost">
                     <i class="fa fa-ban custom-icon" (click)="onHidePostClick(post)" matTooltip="Hide Post"></i>
                 </div>
             </ng-template>
@@ -78,7 +73,7 @@
             <div *ngIf=!post.isPostImage>
                 <div class="show-posts-body">{{ post.post }}</div>
             </div>
-            <div class="timer">{{post.postTimer}} ago</div>
+            <div class="timer">Posted {{post.time}} ago</div>
             <hr class="base-line">
         </mat-card-content>
     </mat-card>

@@ -26,16 +26,20 @@ export class LoginComponent implements OnInit {
   }
 
   login(form:NgForm){
+    ///Current User isActive set flag
     this.authService.authenticate(form.value.email, form.value.password)
     .subscribe(
       // authenticate : success
+      
       (response)=>{
+        console.log("Here")
         console.log(response);
         this.router.navigate(['/home']);
         this.isValid = true;
       },
-      // unautherized : failure
+      // unauthorized : failure
       (error)=>{
+        console.log("error")
         console.log(error);
         this.isValid = false;
       }
@@ -56,7 +60,7 @@ export class LoginComponent implements OnInit {
         // console.log(result.password)
         sessionStorage.setItem('currentUser', JSON.stringify(result));
         this.registrationForm = result;
-        this.Fbend.NewReg()
+        this.Fbend.NewReg();
       });
 
   }
@@ -68,7 +72,7 @@ export class LoginComponent implements OnInit {
       });
   
       dialogRef.afterClosed().subscribe(result => {
-        console.log(result)
+        console.log(result);
         console.log('The reset-Pwd dialog was closed');
       });
 

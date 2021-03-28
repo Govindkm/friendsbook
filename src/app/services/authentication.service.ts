@@ -17,20 +17,10 @@ export class AuthenticationService {
     ) { }
 
 
-  // authenticate(loginId:string,password:string){
-    // if(loginId=="admin@mail.com" && password == "admin") {
-    //   console.log("This was a success")
-    //   return true;
-    // }
-    // else{
-    //   console.log("Nope")
-    //   return false;
-    // }
-
     // create a authentication token
   // }
   authenticate(email:string, password : string){
-    // create a authentication token actual password
+    // create a authentication token
     let authenticationToken = "Bearer " + window.btoa(email + ":" + password);
     console.log(authenticationToken);
 
@@ -62,10 +52,10 @@ export class AuthenticationService {
 
   // to check if any user is logged in
   isUserLoggedIn(){
-    let loginId = sessionStorage.getItem("email");
+    let loginId = sessionStorage.getItem("id");
     if(loginId == null)
       return false;
-    return true;  
+    return loginId;  
   }
 
   // logout 

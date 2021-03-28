@@ -1,15 +1,4 @@
 export class Post{
-<<<<<<< Updated upstream
-    id: string;
-    post: string;
-    userId: string;
-    userPhotoId: string;
-    postImageId: string;
-    userName: string;
-    isAdmin: boolean;
-    isActive: boolean;
-    postTimer: string;
-=======
     id:number;
     email: string;
     name:string;
@@ -29,5 +18,4 @@ export class Post{
         this.image = image;
         this.userIcon = userIcon;
     }
->>>>>>> Stashed changes
 }

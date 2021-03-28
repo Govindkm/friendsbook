@@ -1,21 +1,13 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-import { Component, OnInit } from '@angular/core';
-=======
-=======
->>>>>>> Stashed changes
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
->>>>>>> Stashed changes
 import { Post } from 'src/app/models/post.model';
-<<<<<<< Updated upstream
-=======
 import { User } from 'src/app/models/user.model';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { PostService } from 'src/app/services/post.service';
 import { UsersService } from 'src/app/services/users.service';
 import { UtilityService } from 'src/app/services/utility.service';
->>>>>>> Stashed changes
+
+
 
 @Component({
   selector: 'app-posts',
@@ -23,20 +15,6 @@ import { UtilityService } from 'src/app/services/utility.service';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  posts:Post[];
-  isLoading:boolean=true;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  onPost(){
-
-=======
-=======
->>>>>>> Stashed changes
   @Output() postUpdated = new EventEmitter<void>();
   
   posts:Post[] = [];
@@ -103,7 +81,6 @@ export class PostsComponent implements OnInit {
     }
     
     )
->>>>>>> Stashed changes
   }
 
   onHidePostClick(){

@@ -9,9 +9,11 @@
                 <mat-card class="card">
                     <mat-card-content class="card-content">
                         <form #form="ngForm" class="login-form" (submit)="login(form)" class="login-form">
-                            <input type="email" name="email" ngModel placeholder="Email address">
-                            <input type="password" name="password" ngModel placeholder="Password">
-                            <button type="submit" class="login-btn">Log In</button>
+                            <input type="email" name="email" ngModel placeholder="Email address" email required> 
+                            <input type="password" name="password" ngModel placeholder="Password" required>
+                            <span *ngIf="!form.valid && form.touched" style="color:red">Please Enter the credentials</span>
+                            <span *ngIf="!isValid" style="color:red">Wrong credentials</span>
+                            <button type="submit" class="login-btn" [disabled] = "!form.valid">Log In</button>
                         </form>
                         
                         <a (click) = "ResetPwd()">Forgotten account?</a>

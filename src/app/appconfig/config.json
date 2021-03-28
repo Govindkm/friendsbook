@@ -1,0 +1,5 @@
+{
+    "usersDbURL":"http://localhost:3000/users",
+    "postDbURL":"http://localhost:3000/posts"
+
+}
