@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -7,7 +7,7 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements AfterContentInit {
   activeUserObject: User;
   existingPhotoId: String;
   noOfPosts: Number = 0;
@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
   isImageAvailable: Boolean = false;
   constructor(private user:UsersService) { }
 
-  ngOnInit(): void {
+  ngAfterContentInit(): void {
     this.user.getActiveUser().subscribe((data)=>{
       this.activeUserObject = data;
       this.noOfPosts = this.activeUserObject.posts;

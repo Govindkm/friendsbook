@@ -30,6 +30,21 @@ export class UsersService {
     }))
   }
 
+  getUserbyemail(email){
+    return this.http.get(usersURL)
+    .pipe(map(allUsers=>{
+      const user=[];
+      for(let key in allUsers){
+        var responseData = allUsers[key].email;
+        if (responseData==email){
+          user.push(allUsers[key])
+        }
+              }
+      //console.log(users);
+      return user;
+    }))
+  }
+
   getActiveUser()
   {
     if(this.auth.isUserLoggedIn()){

@@ -12,13 +12,13 @@
       </div>
 
       <div class="email-password">
-        <div class="row" >
+        <div >
           <input type="text" placeholder="Email" name="email" ngModel #email="ngModel" required email>
 
           <button class="check-button" style="margin-left: 10px;" (click)="checkAvailablity(email)" >
             
             Check Availablity</button>
-            
+          <br>
           <span *ngIf="notAvailable && clicked" style="color:red">{{checkAvailablity(email)}}</span>
           <span *ngIf="!notAvailable && email.touched && email.valid && email.dirty " style="color:green">{{checkAvailablity(email)}}</span>
           

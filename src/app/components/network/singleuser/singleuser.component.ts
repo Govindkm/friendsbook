@@ -22,8 +22,14 @@ export class SingleuserComponent implements OnInit {
         console.log(this.user)
       });
     }
+    else{
+      this.userService.getUserbyemail(this.parameter).subscribe(users=>{
+      this.user = users[0];
+      console.log(this.user)
+    })
     
   }
+}
 
   sendRequest(user){
     console.log("sendRequest")
@@ -31,3 +37,4 @@ export class SingleuserComponent implements OnInit {
   }
 
 }
+

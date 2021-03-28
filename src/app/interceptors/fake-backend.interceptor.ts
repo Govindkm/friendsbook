@@ -43,59 +43,56 @@ export class FakeBackendService implements HttpInterceptor{
       case url.endsWith("/posts"):
           return next.handle(request);
       
-      default :
+      default :{
+          // console.log("Status Update")
+        if(this.status){
+          console.log("passed")
+          return next.handle(request); 
+        }
+        console.log("FAIL")
+        return this.unauthorized(); 
+      
+      }
             //console.log(users);
-            if(this.isValid(headers)){ 
-              // console.log("Status Update")
-            if(this.status){
-              console.log("passed")
-              return next.handle(request); 
-            }
-            console.log("FAIL")
-            return this.unauthorized(); 
-          }
+            
             
     }
   }
 
-  isValid(headers?){
-    let authenticationToken =  headers.get("Authorization");
-    this.usersService.getUsers()
-    .subscribe(data=>{
-      //console.log(data);
-      users = data;
-      // console.log(users)
-      let user = users.find(user => authenticationToken === user.password);
-      console.log("user");
+  // isValid(headers?){
+  //   let authenticationToken =  headers.get("Authorization");
+  //   this.usersService.getUsers()
+  //   .subscribe(data=>{
+  //     //console.log(data);
+  //     users = data;
+  //     // console.log(users)
+  //     let user = users.find(user => authenticationToken === user.password);
+  //     console.log("user");
       
-      // console.log(user)
+  //     // console.log(user)
       
-      if(user){
-        this.status=true
-        console.log(this.status)
-        return true;
-      }
-      else{
-        this.status=false
-        console.log(this.status)
-        return false;
-      }
-    })
-    // console.log(users)
-    // check auth token with all user
-    return true
-  }
+  //     if(user){
+  //       this.status=true
+  //       console.log(this.status)
+  //       return true;
+  //     }
+  //     else{
+  //       this.status=false
+  //       console.log(this.status)
+  //       return false;
+  //     }
+  //   })
+  //   // console.log(users)
+  //   // check auth token with all user
+  //   return true
+  // }
 
   authenticate(headers?){
     let authenticationToken =  headers.get("Authorization");
     // check auth token with all user
     
     return this.http.get<any>(server_URL).
-    // pipe(map(Ulist => {
-    //   return {
-    //     users: Ulist.features.map(x=x)
-    //   }
-    // })).
+   
     pipe(switchMap(response=>{
       console.log("LOGIN AUTHENTICATE")
       // console.log(response)
@@ -116,8 +113,11 @@ export class FakeBackendService implements HttpInterceptor{
         // credentials are valid store user id to enable user editing using json server
         sessionStorage.setItem('id', nUser.userId.toString());
         // console.log(this.authorized(nUser))
+        this.status=true
         return this.authorized(nUser);
+        
       }else{
+        this.status=false
         return this.unauthorized();
     }
 
