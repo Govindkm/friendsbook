@@ -2,6 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
+# Prerequisite
+The project uses [json-server] for running backend. 
+
+Install json-server to run database on local environment.
+
+Run the following command to install json-server
+`npm install json-server`
+
+Followed by
+`json-server --watch db.json`
+
+Make sure port 3000 is open as json-server and the codes require port 3000 to run backend services.
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
