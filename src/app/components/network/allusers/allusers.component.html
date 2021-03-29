@@ -7,16 +7,18 @@
                 <th class="align-middle" scope="col">First</th>
                 <th class="align-middle" scope="col">Last</th>
                 <th class="align-middle" scope="col">Gender</th>
-                <th class="align-middle" scope="col">Action</th>
+                <th class="align-middle" scope="col">Request</th>
+                <th class="align-middle" scope="col">Accept</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let user of users">
-                <th class="align-middle" scope="col"><img src="{{user.photoId}}" alt="{{user.email}}" style="max-width: 30%; border-radius: 50%;"></th>
+                <th class="align-middle" scope="col"><img src="{{user.photoId}}" alt="{{user.email}}" style="max-width: 100px; border-radius: 50%;"></th>
                 <th class="align-middle" scope="col">{{user.firstName}}</th>
                 <th class="align-middle" scope="col">{{user.lastName}}</th>
                 <th class="align-middle" scope="col">{{user.gender}}</th>
-                <th class="align-middle" scope="col"><button class="btn" [ngClass]="['btn-success']" (click)="sendRequest(user)">Send request</button></th>
+                <th class="align-middle" scope="col"><button class="btn" [ngClass]="['btn-success']" (click)="sendRequest(user.id)" [disabled]="user['requests'].includes(activeUser.id)">Send request</button></th>
+                <th class="align-middle" scope="col"><button class="btn" [ngClass]="['btn-success']" [disabled]="activeUser['friends'].includes(user.id) && user['requested'].includes(activeUser.id) || !activeUser['requests'].includes(user.id)" (click)="acceptRequest(user.id)">Accept</button></th>
             </tr>    
         </tbody>
     </table>

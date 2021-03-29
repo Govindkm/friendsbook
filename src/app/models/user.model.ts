@@ -15,8 +15,11 @@ export class User {
     photoId: string;
     posts:number;
     password:string;
+    requests:number[];
+    requested:number[];
+    friends:number[];
 
-    constructor(id, firstName, lastName,dob, gender, email, posts, password, isAdmin, isActive, phone?, city?, state?, country?, pincode?, photoId?){
+    constructor(id, firstName, lastName,dob, gender, email, posts, password, isAdmin, isActive, phone?, city?, state?, country?, pincode?, photoId?, requests?, requested?, friends?){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -33,5 +36,8 @@ export class User {
         this.country = country;
         this.pincode = pincode;
         this.photoId = photoId;
+        this.requests = requests;
+        this.requested = requested;
+        this.friends = friends;
     }
 }

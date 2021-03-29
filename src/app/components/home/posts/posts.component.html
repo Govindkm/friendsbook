@@ -53,15 +53,16 @@
                 <div class="show-posts-header">{{ post.name }} </div>
                 <div class="profession">{{post.email}}</div>
             </span>
-            <span fxFlex="5%" *ngIf="activeUserObject.isAdmin; else activeUsersPost">
+            <!-- <span fxFlex="5%" *ngIf="activeUserObject.isAdmin; else activeUsersPost">
                 <i class="fa fa-ban custom-icon" (click)="onHidePostClick(post)" matTooltip="Hide Post"></i>
             </span>
 
             <ng-template #activeUsersPost>
-                <div fxFlex="5%" *ngIf="post.isMyPost">
+                <div fxFlex="5%" *ngIf="post.email===activeUserObject.email">
+                    {{post.email===activeUserObject.email}}
                     <i class="fa fa-ban custom-icon" (click)="onHidePostClick(post)" matTooltip="Hide Post"></i>
                 </div>
-            </ng-template>
+            </ng-template> -->
         </div>
         <br>
 

@@ -39,6 +39,7 @@
     align-items: center;
 }
 
+
 .center .icon{
     width: 40px;
     height: 40px;
@@ -52,12 +53,18 @@
 }
 
 .searchbar{
-    height: 100%;
+    height: 80%;
+    background-color: white;
+    border-radius: 2%;
 }
 
 .searchbar input{
     height: 70%;
     margin: 3% 0;
+}
+
+.searchbar i:hover{
+    color: var(--primary-color);
 }
 
 a{

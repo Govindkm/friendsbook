@@ -83,8 +83,10 @@ export class PostsComponent implements OnInit {
     )
   }
 
-  onHidePostClick(){
-    
+  onHidePostClick(post){
+    console.log('active User : '+this.activeUserObject.email+' has isAdmin '+this.activeUserObject.isAdmin);
+    console.log(this.activeUserObject)
+    console.log(post);
   }
 
 }

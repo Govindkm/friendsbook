@@ -5,141 +5,96 @@
       "lastName": "test",
       "email": "test@test",
       "password": "Bearer dGVzdEB0ZXN0OnRlc3Q=",
-      "dob": "2010-01-01",
+      "dob": "2015-01-01",
       "gender": "male",
       "isAdmin": "true",
       "isActive": false,
-      "photoId": "https://randomuser.me/api/portraits/men/20.jpg",
+      "photoId": "/assets/default-user.jpg",
+      "requests": [
+        2
+      ],
+      "requested": [
+        2,
+        3
+      ],
+      "friends": [
+        2
+      ],
       "id": 1,
-      "posts": 10,
-      "phone": "124578963",
-      "city": "Delhi",
-      "state": "Delhi",
-      "country": "India",
-      "pincode": "110001"
+      "posts": 1
+    },
+    {
+      "firstName": "default",
+      "lastName": "user",
+      "email": "default@user",
+      "password": "Bearer ZGVmYXVsdEB1c2VyOmRlZmF1bHQ=",
+      "dob": "2012-01-01",
+      "gender": "male",
+      "isAdmin": "true",
+      "isActive": false,
+      "photoId": "/assets/default-user.jpg",
+      "requests": [
+        1
+      ],
+      "requested": [
+        1
+      ],
+      "friends": [
+        1
+      ],
+      "id": 2
+    },
+    {
+      "firstName": "user",
+      "lastName": "test",
+      "email": "user@test",
+      "password": "Bearer dXNlckB0ZXN0OnBhc3N3b3Jk",
+      "dob": "2015-01-01",
+      "gender": "male",
+      "isAdmin": "false",
+      "isActive": false,
+      "photoId": "/assets/default-user.jpg",
+      "requests": [
+        1
+      ],
+      "requested": [],
+      "friends": [],
+      "id": 3
     },
     {
       "firstName": "another",
       "lastName": "mail",
       "email": "another@mail",
       "password": "Bearer YW5vdGhlckBtYWlsOnRlc3Q=",
-      "dob": "0001-11-11",
+      "dob": "0001-01-01",
       "gender": "male",
       "isAdmin": "true",
       "isActive": false,
       "photoId": "/assets/default-user.jpg",
-      "id": 2,
+      "id": 4,
       "posts": 1
     }
   ],
   "posts": [
     {
       "email": "test@test",
-      "post": "Hello",
-      "time": "1616909734766",
+      "name": "test test",
+      "post": "test",
+      "time": "1616989020007",
       "isActive": true,
       "image": null,
       "userIcon": "/assets/default-user.jpg",
       "id": 1
     },
     {
-      "email": "test@test",
-      "post": "Hello",
-      "time": "1616909738765",
+      "email": "another@mail",
+      "name": "another mail",
+      "post": "New",
+      "time": "1617004618169",
       "isActive": true,
       "image": null,
       "userIcon": "/assets/default-user.jpg",
       "id": 2
-    },
-    {
-      "email": "test@test",
-      "name": "test test",
-      "post": "Test",
-      "time": "1616910727352",
-      "isActive": true,
-      "image": null,
-      "userIcon": "/assets/default-user.jpg",
-      "id": 3
-    },
-    {
-      "email": "test@test",
-      "name": "test test",
-      "post": "hi",
-      "time": "1616910736759",
-      "isActive": true,
-      "image": null,
-      "userIcon": "/assets/default-user.jpg",
-      "id": 4
-    },
-    {
-      "email": "test@test",
-      "name": "test test",
-      "post": "hello",
-      "time": "1616910742902",
-      "isActive": true,
-      "image": null,
-      "userIcon": "/assets/default-user.jpg",
-      "id": 5
-    },
-    {
-      "email": "test@test",
-      "name": "test test",
-      "post": "hello",
-      "time": "1616910755095",
-      "isActive": true,
-      "image": null,
-      "userIcon": "/assets/default-user.jpg",
-      "id": 6
-    },
-    {
-      "email": "test@test",
-      "name": "test test",
-      "post": "hello",
-      "time": "1616910758519",
-      "isActive": true,
-      "image": null,
-      "userIcon": "/assets/default-user.jpg",
-      "id": 7
-    },
-    {
-      "email": "test@test",
-      "name": "test test",
-      "post": "hello",
-      "time": "1616910761639",
-      "isActive": true,
-      "image": null,
-      "userIcon": "/assets/default-user.jpg",
-      "id": 8
-    },
-    {
-      "email": "test@test",
-      "name": "test test",
-      "post": "hello",
-      "time": "1616910765335",
-      "isActive": true,
-      "image": null,
-      "userIcon": "/assets/default-user.jpg",
-      "id": 9
-    },
-    {
-      "email": "test@test",
-      "name": "test test",
-      "post": "test",
-      "time": "1616913385892",
-      "isActive": true,
-      "image": null,
-      "userIcon": "https://randomuser.me/api/portraits/men/20.jpg",
-      "id": 10
-    },
-    {
-      "email": "another@mail",
-      "name": "another mail",
-      "post": "test",
-      "time": "1616934342077",
-      "isActive": true,
-      "image": null,
-      "userIcon": "/assets/default-user.jpg",
-      "id": 11
     }
   ]
 }
